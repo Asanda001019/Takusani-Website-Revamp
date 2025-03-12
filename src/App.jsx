@@ -26,6 +26,8 @@ function App() {
     <br />
     <MainAbout />
     <br />
+    <AboutUs/>
+    <br/>
     <OurServices />
     <br />
     <ServicesCards />

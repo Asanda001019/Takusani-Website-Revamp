@@ -15,13 +15,16 @@ const MainAbout = () => {
           <h2 className="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
             Build a Website That Your Customers Love
           </h2>
-          <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
-            Our templates allow for maximum customization. No technical skills required – our intuitive design tools
-            let you get the job done easily.
-          </p>
+          {/* Reduce margin between heading and paragraph */}
+          <div className="my-4 flex justify-center">
+            <p className="bg-transparent text-center font-small leading-relaxed tracking-wide text-gray-400 max-w-4xl mx-auto">
+              Takusani Group offers goal-oriented services in training, skills development, employee wellness programs, and economic development consultancy. As a 100% black-owned Level 1 BBBEE Contributor, the company provides practical, relevant, and sustainable solutions. Takusani is a trusted partner in helping organizations achieve responsible, sustainable economic development through accredited training and Enterprise Supplier Development Consultancy Services. They focus on creating strategies and processes that align with business objectives, improve performance, and drive growth. Takusani works closely with clients to provide realistic solutions and build strong, cooperative partnerships to ensure good corporate governance and sustainable development.
+            </p>
+          </div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Reduce padding between paragraph and cards */}
+        <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Vision Section */}
           <div className="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
             <div
@@ -35,7 +38,7 @@ const MainAbout = () => {
             </div>
             <h3 className="mt-6 text-gray-400">Vision</h3>
             <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
-              Our vision is to empower businesses by creating beautiful, user-friendly websites with minimal effort.
+              To be the leaders in Training, Skills Development, Enterprise Supplier Development and Socio Economic Development Consultancy and make a lasting positive economic impact in Africa and the rest of the world to the benefit of all.
             </p>
           </div>
 
@@ -52,7 +55,7 @@ const MainAbout = () => {
             </div>
             <h3 className="mt-6 text-gray-400">Mission</h3>
             <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
-              Our mission is to provide innovative tools that simplify the process of creating stunning websites.
+              To develop and enhance the performance of Corporates ,SMME`s and Government Sector by creating new and existing opportunities through sustainable relationships focused on people, effective leadership, policy business goals. We enable our clients to build capacity in order to have an impactful role in the economy.
             </p>
           </div>
 
@@ -69,8 +72,17 @@ const MainAbout = () => {
             </div>
             <h3 className="mt-6 text-gray-400">Values</h3>
             <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
-              We value collaboration, transparency, and simplicity, always working towards providing the best for our
-              clients.
+              • Ethical
+              <br />
+              • Integrity
+              <br />
+              • Diversity
+              <br />
+              • Innovative
+              <br />
+              • Knowledgeable
+              <br />
+              • Learning & skills transfer
             </p>
           </div>
         </div>

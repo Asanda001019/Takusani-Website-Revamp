@@ -1,88 +1,59 @@
 import React from 'react';
 
-
 const AboutUs = () => {
   const features = [
     {
-      icon: 'clock',
-      title: 'Result',
-      description: 'Accurate results are our top priority, ensuring you always have reliable information at your fingertips.'
+      icon: 'education',
+      title: 'TRAINING',
+      description: 'All our facilitators have practical experience of implementation of the knowledge framework they are transferring to learners. Programs are further enhanced to provide learners with additional information and skills to be applied and sustained within the client’s organisation.'
     },
     {
-      icon: 'thumbs-up',
-      title: 'Quality',
-      description: 'We are committed to providing high-quality products and services that exceed your expectations.'
+      icon: 'growth',
+      title: 'ESD & SED SOLUTIONS',
+      description: 'The extent to which enterprises carry out enterprise development initiatives intended to assist and accelerate the growth and sustainability of black enterprises.'
     },
     {
-      icon: 'printer',
-      title: 'Product',
-      description: 'Experience the difference of our feature-rich product that offers everything you requires and many more'
+      icon: 'skills',
+      title: 'SKILLS DEVELOPMENT',
+      description: 'The extent to which enterprises carry out enterprise development initiatives intended to assist and accelerate the growth and sustainability of black enterprises.'
     },
     {
-      icon: 'bar-chart',
-      title: 'Sales',
-      description: 'Experience the difference of our personalized sales approach, where you are always our top priority.'
-    },
-    {
-      icon: 'sitemap',
-      title: 'Onboarding',
-      description: 'Our onboarding process is designed to be simple and intuitive, so you can start using our platform right away'
-    },
-    {
-      icon: 'headset',
-      title: 'Support',
-      description: 'Our commitment to exceptional support ensures that you receive the assistance you need, whenever you need it'
+      icon: 'support',
+      title: 'EMPLOYEE ASSISTANCE PROGRAMME',
+      description: 'We have the infrastructure and ability to impeccably provide services to employees across all nine provinces.'
     }
   ];
 
-  // Function to render the appropriate icon
+  // Function to render the appropriate icon based on the name
   const renderIcon = (iconName) => {
     switch (iconName) {
-      case 'clock':
+      case 'education':
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-indigo-500">
+            <path d="M12 2L2 7h3v6h4V7h6v6h4V7h3L12 2z" />
+            <path d="M2 17v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2" />
           </svg>
         );
-      case 'thumbs-up':
+      case 'growth':
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-indigo-500">
+            <path d="M12 6v6h6" />
+            <path d="M18 12l6-6-6-6" />
+            <path d="M6 18v-6H0" />
+            <path d="M6 6L0 12l6 6" />
           </svg>
         );
-      case 'printer':
+      case 'skills':
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-indigo-500">
+            <path d="M12 2l2 7h7l-5 4 2 7-5-4-5 4 2-7-5-4h7z" />
           </svg>
         );
-      case 'bar-chart':
+      case 'support':
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="20" x2="18" y2="10"></line>
-            <line x1="12" y1="20" x2="12" y2="4"></line>
-            <line x1="6" y1="20" x2="6" y2="14"></line>
-          </svg>
-        );
-      case 'sitemap':
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="5" r="3"></circle>
-            <line x1="12" y1="8" x2="12" y2="12"></line>
-            <line x1="4.93" y1="17.07" x2="9.17" y2="12.83"></line>
-            <line x1="19.07" y1="17.07" x2="14.83" y2="12.83"></line>
-            <circle cx="5" cy="19" r="3"></circle>
-            <circle cx="19" cy="19" r="3"></circle>
-          </svg>
-        );
-      case 'headset':
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-indigo-500">
+            <path d="M3 12l9 9 9-9" />
+            <path d="M12 3v18" />
           </svg>
         );
       default:
@@ -91,21 +62,24 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="feature-container">
-      <div className="feature-header">
-        <h1>Every feature designed for the user</h1>
-        <p className="feature-subtitle">
-          At every step of our process, we prioritize the user, ensuring that our products and
-          services are designed with their needs in mind.
+    <div className="py-16 bg-gray-900 text-white px-4 sm:px-6 lg:px-16">
+      <div className="text-center mb-16">
+        <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Every Feature Designed for the User</h1>
+        <p className="mt-4 text-lg text-gray-400">
+          At every step of our process, we prioritize the user, ensuring that our products and services are designed with their needs in mind.
         </p>
       </div>
-      
-      <div className="feature-grid">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {features.map((feature, index) => (
-          <div key={index} className="feature-item">
-            <div className="feature-icon">{renderIcon(feature.icon)}</div>
-            <h3 className="feature-title">{feature.title}</h3>
-            <p className="feature-description">{feature.description}</p>
+          <div key={index} className="bg-gray-800 p-8 rounded-lg shadow-lg transform transition duration-300 hover:bg-indigo-700">
+            <div className="mb-6 flex justify-center">
+              <div className="p-4 bg-indigo-600 rounded-full">
+                {renderIcon(feature.icon)}
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+            <p className="mt-2 text-gray-400">{feature.description}</p>
           </div>
         ))}
       </div>
