@@ -9,6 +9,9 @@ import OurServices from './components/OurServices'
 import ServicesCards from './components/ServicesCards'
 import EachService from './components/EachService'
 import Features from './components/SECONDSERVICE'
+import ContactUs from './components/ContactUs'
+import ContactSection from './components/ContactForm'
+import Footer from './components/Footer'
 
 function App() {
  
@@ -29,6 +32,12 @@ function App() {
     <EachService />
     <br />  
     <Features />
+    <br />
+    <ContactUs />
+    <br />  
+    <ContactSection />
+    <br />
+    <Footer />
     
    
     </>
