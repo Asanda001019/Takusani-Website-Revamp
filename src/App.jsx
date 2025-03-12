@@ -12,6 +12,7 @@ import Features from './components/SECONDSERVICE'
 import ContactUs from './components/ContactUs'
 import ContactSection from './components/ContactForm'
 import Footer from './components/Footer'
+import SponsorSection from './components/SponsorSection'
 
 function App() {
  
@@ -38,6 +39,8 @@ function App() {
     <ContactSection />
     <br />
     <Footer />
+    <br />  
+    <SponsorSection />
     
    
     </>
