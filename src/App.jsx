@@ -8,6 +8,7 @@ import MainAbout from './components/MainAbout'
 import OurServices from './components/OurServices'
 import ServicesCards from './components/ServicesCards'
 import EachService from './components/EachService'
+import Features from './components/SECONDSERVICE'
 
 function App() {
  
@@ -26,6 +27,8 @@ function App() {
     <ServicesCards />
     <br />
     <EachService />
+    <br />  
+    <Features />
     
    
     </>

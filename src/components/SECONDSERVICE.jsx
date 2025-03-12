@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ApiSecurityFeatures = () => {
+const Features = () => {
   return (
     <div className="lg:ml-6 lg:col-start-2 lg:max-w-2xl">
       <p className="text-base font-semibold leading-6 text-indigo-500 uppercase">
@@ -72,4 +72,4 @@ const ApiSecurityFeatures = () => {
   );
 };
 
-export default ApiSecurityFeatures;
+export default Features;
