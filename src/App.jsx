@@ -7,6 +7,7 @@ import AboutUsSection from './components/AboutUsSection'
 import MainAbout from './components/MainAbout'
 import OurServices from './components/OurServices'
 import ServicesCards from './components/ServicesCards'
+import EachService from './components/EachService'
 
 function App() {
  
@@ -23,6 +24,8 @@ function App() {
     <OurServices />
     <br />
     <ServicesCards />
+    <br />
+    <EachService />
     
    
     </>
