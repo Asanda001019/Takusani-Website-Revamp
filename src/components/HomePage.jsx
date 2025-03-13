@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
-
-import { Phone, MapPin, Mail, ArrowRight } from 'lucide-react'; 
+import { Phone, MapPin, Mail, ArrowRight, Users, Shield, Activity, HelpCircle } from 'lucide-react'; // Importing lucide-react icons
 
 // Import images
 import bgImage from '../assets/bg.jpg';
-import trainingImage from '../assets/training.jpeg';
-import skillImage from '../assets/skill.jpeg';
+
+import bg from '../assets/BB.jpg';
+import bge from '../assets/BG3.jpg';
 import esdImage from '../assets/esd.jpg';
 
 // Array to hold image references
 const images = [
   bgImage,
-  trainingImage,
-  skillImage,
-  esdImage
+  bg,
+  esdImage,
+  bge,
+
+ 
 ];
 
 const HomePage = () => {
@@ -31,7 +33,7 @@ const HomePage = () => {
   return (
     <div className="font-sans text-gray-800">
       {/* Top Contact Bar */}
-      <div className="flex justify-between items-center px-6 py-2 bg-white border-b border-gray-100">
+      {/* <div className="flex justify-between items-center px-6 py-1 bg-white border-b border-gray-100">
         <div className="flex gap-6">
           <div className="flex items-center gap-2 text-sm">
             <Phone size={16} className="text-gray-500" />
@@ -46,40 +48,51 @@ const HomePage = () => {
             <span>info@Takusani.co.za</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-6 py-4 bg-white">
+      <nav className="flex justify-between items-center px-6 py-2 bg-white">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-bold text-2xl px-4 py-2 rounded-lg">
-            Takusani Grou
+          <div className="h-16 w-80">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" className="h-full">
+              {/* Arrow head (yellow triangle) */}
+              <polygon points="30,40 60,10 90,40" fill="#FFE600"/>
+              
+              {/* Arrow stem (blue) */}
+              <rect x="54" y="40" width="12" height="50" fill="#2A3190"/>
+              
+              {/* Text "akusani" */}
+              <text x="70" y="85" font-family="Arial, sans-serif" font-size="32" font-weight="500" fill="#2A3190">akusani</text>
+              
+              {/* Tagline */}
+              <text x="70" y="105" font-family="Arial, sans-serif" font-size="15" fill="#777777">Adding Value To Your Organisation</text>
+            </svg>
           </div>
-          <span className="text-xs text-gray-500 ml-2">IT Solutions & Service</span>
+          <span className="text-xs text-gray-500 ml-4">IT Solutions & Service</span>
         </div>
 
         {/* Navigation Links */}
         <div className="flex gap-6">
           <div className="flex items-center gap-1 cursor-pointer">
             <span>Home</span>
-            {/* Removed ChevronDown and other links */}
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Pages</span>
-            {/* Removed ChevronDown and other links */}
+            <span>About</span>
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
             <span>Services</span>
-            {/* Removed ChevronDown and other links */}
+          </div>
+          <div className="flex items-center gap-1 cursor-pointer">
+            <span>Contact</span> 
           </div>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-          {/* Removed Search Bar and English Dropdown */}
-          <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-4 py-2 flex items-center gap-2">
+          {/* <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-4 py-1.5 flex items-center gap-2">
             Get a quote now <ArrowRight size={16} />
-          </button>
+          </button> */}
         </div>
       </nav>
 
@@ -87,8 +100,8 @@ const HomePage = () => {
       <div
         className="relative min-h-[500px] overflow-hidden bg-cover bg-center z-0"
         style={{
-          backgroundImage: `url(${images[currentImage]})`, // Dynamically changing the background image
-          transition: 'background-image 1s ease-in-out', // Smooth transition effect for the background
+          backgroundImage: `url(${images[currentImage]})`,
+          transition: 'background-image 1s ease-in-out',
         }}
       >
         {/* Purple overlay with diagonal cutout */}
@@ -97,12 +110,12 @@ const HomePage = () => {
         {/* Content */}
         <div className="relative z-20 container mx-auto px-6 py-16 flex items-center min-h-[500px]">
           <div className="max-w-lg text-white">
-            <div className="inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm mb-6">
+            {/* <div className="inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm mb-6">
               We are IT service agency
-            </div>
+            </div> */}
             <h1 className="text-5xl font-bold mb-6 leading-tight">
-              Think Big. We make<br />
-              IT, possible!
+              TAKUSANI GROUP<br />
+              TRAINING AND SKILLS DEVELOPMENT
             </h1>
             <p className="mb-8 text-lg">
               We place you at the centre of international networks to<br />
@@ -118,50 +131,42 @@ const HomePage = () => {
       {/* Services Section */}
       <div className="bg-gray-50 py-6">
         <div className="container mx-auto px-6 -mt-16 relative z-30">
-          <div className="grid grid-cols-4 gap-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-4 gap-6">
             {/* Training Card */}
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
-              <div className="w-16 h-16 flex items-center justify-center mb-4">
-                {/* Replace with training icon */}
-                <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v18m9-9H3" />
-                </svg>
+            <div className="bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center">
+              <div className="w-12 h-12 flex items-center justify-center mb-3">
+                {/* Updated icon (Users for training) */}
+                <Users size={24} className="text-indigo-600" />
               </div>
               <h3 className="font-medium text-lg">Training</h3>
               <p className="text-gray-500 text-sm">Services</p>
             </div>
 
             {/* ESD and SED Solution Card */}
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
-              <div className="w-16 h-16 flex items-center justify-center mb-4">
-                {/* Replace with ESD icon */}
-                <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l7 7 7-7" />
-                </svg>
+            <div className="bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center">
+              <div className="w-12 h-12 flex items-center justify-center mb-3">
+                {/* Updated icon (Shield for ESD & SED) */}
+                <Shield size={24} className="text-indigo-600" />
               </div>
               <h3 className="font-medium text-lg">ESD & SED</h3>
               <p className="text-gray-500 text-sm">Solution</p>
             </div>
 
             {/* Skills Development Card */}
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
-              <div className="w-16 h-16 flex items-center justify-center mb-4">
-                {/* Replace with skills development icon */}
-                <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
-                </svg>
+            <div className="bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center">
+              <div className="w-12 h-12 flex items-center justify-center mb-3">
+                {/* Updated icon (Activity for Skills Development) */}
+                <Activity size={24} className="text-indigo-600" />
               </div>
               <h3 className="font-medium text-lg">Skills Development</h3>
               <p className="text-gray-500 text-sm">Training</p>
             </div>
 
             {/* Employee Assistance Card */}
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
-              <div className="w-16 h-16 flex items-center justify-center mb-4">
-                {/* Replace with employee assistance icon */}
-                <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2v20M2 12h20" />
-                </svg>
+            <div className="bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center">
+              <div className="w-12 h-12 flex items-center justify-center mb-3">
+                {/* Updated icon (HelpCircle for Employee Assistance) */}
+                <HelpCircle size={24} className="text-indigo-600" />
               </div>
               <h3 className="font-medium text-lg">Employee Assistance</h3>
               <p className="text-gray-500 text-sm">Support</p>
