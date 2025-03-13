@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, ChevronDown, ArrowRight } from 'lucide-react';
 
+// Import images
+import bgImage from '../assets/bg.jpg';
+import trainingImage from '../assets/training.jpeg';
+import skillImage from '../assets/skill.jpeg';
+import esdImage from '../assets/esd.jpg'
+
+// Array to hold image references
+const images = [
+  bgImage,
+  trainingImage,
+  skillImage,
+  esdImage
+];
+
 const HomePage = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Change background image every 5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <div className="font-sans text-gray-800">
       {/* Top Contact Bar */}
@@ -34,31 +59,31 @@ const HomePage = () => {
           </div>
           <span className="text-xs text-gray-500 ml-2">IT Solutions & Service</span>
         </div>
-        
+
         {/* Navigation Links */}
         <div className="flex gap-6">
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Home</span> 
+            <span>Home</span>
             <ChevronDown size={16} />
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Pages</span> 
+            <span>Pages</span>
             <ChevronDown size={16} />
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Services</span> 
+            <span>Services</span>
             <ChevronDown size={16} />
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Portfolio</span> 
+            <span>Portfolio</span>
             <ChevronDown size={16} />
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Blog</span> 
+            <span>Blog</span>
             <ChevronDown size={16} />
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>Elements</span> 
+            <span>Elements</span>
             <ChevronDown size={16} />
           </div>
         </div>
@@ -70,7 +95,7 @@ const HomePage = () => {
             <Search size={18} className="text-gray-500 ml-2" />
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            <span>English</span> 
+            <span>English</span>
             <ChevronDown size={16} />
           </div>
           <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-4 py-2 flex items-center gap-2">
@@ -80,18 +105,16 @@ const HomePage = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className="relative min-h-[500px] bg-indigo-600 overflow-hidden">
+      <div
+        className="relative min-h-[500px] overflow-hidden bg-cover bg-center z-0"
+        style={{
+          backgroundImage: `url(${images[currentImage]})`, // Dynamically changing the background image
+          transition: 'background-image 1s ease-in-out', // Smooth transition effect for the background
+        }}
+      >
         {/* Purple overlay with diagonal cutout */}
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-indigo-500 opacity-90 z-10"></div>
-        
-        {/* Background image */}
-        <div className="absolute right-0 top-0 w-8/12 h-full bg-cover bg-center z-0"
-             style={{
-               backgroundImage: "url('/api/placeholder/1200/800')",
-               clipPath: "polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%)"
-             }}>
-        </div>
-        
+
         {/* Content */}
         <div className="relative z-20 container mx-auto px-6 py-16 flex items-center min-h-[500px]">
           <div className="max-w-lg text-white">
@@ -128,7 +151,7 @@ const HomePage = () => {
               <h3 className="font-medium text-lg">Training</h3>
               <p className="text-gray-500 text-sm">Services</p>
             </div>
-            
+
             {/* ESD and SED Solution Card */}
             <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
               <div className="w-16 h-16 flex items-center justify-center mb-4">
@@ -140,7 +163,7 @@ const HomePage = () => {
               <h3 className="font-medium text-lg">ESD & SED</h3>
               <p className="text-gray-500 text-sm">Solution</p>
             </div>
-            
+
             {/* Skills Development Card */}
             <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
               <div className="w-16 h-16 flex items-center justify-center mb-4">
