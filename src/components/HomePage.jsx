@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Search, ChevronDown, ArrowRight } from 'lucide-react';
+
+import { Phone, MapPin, Mail, ArrowRight } from 'lucide-react'; 
 
 // Import images
 import bgImage from '../assets/bg.jpg';
 import trainingImage from '../assets/training.jpeg';
 import skillImage from '../assets/skill.jpeg';
-import esdImage from '../assets/esd.jpg'
+import esdImage from '../assets/esd.jpg';
 
 // Array to hold image references
 const images = [
@@ -32,21 +33,18 @@ const HomePage = () => {
       {/* Top Contact Bar */}
       <div className="flex justify-between items-center px-6 py-2 bg-white border-b border-gray-100">
         <div className="flex gap-6">
-          <div className="flex items-center gap-1 text-sm">
-            <span>(678) 345-3456</span>
+          <div className="flex items-center gap-2 text-sm">
+            <Phone size={16} className="text-gray-500" />
+            <span>(010) 634-0505</span>
           </div>
-          <div className="flex items-center gap-1 text-sm">
-            <span>380 Albert St, Melbourne, Australia</span>
+          <div className="flex items-center gap-2 text-sm">
+            <MapPin size={16} className="text-gray-500" />
+            <span>8 Incubation Riverside View Fourways</span>
           </div>
-          <div className="flex items-center gap-1 text-sm">
-            <span>email@gmail.com</span>
+          <div className="flex items-center gap-2 text-sm">
+            <Mail size={16} className="text-gray-500" />
+            <span>info@Takusani.co.za</span>
           </div>
-        </div>
-        <div className="flex gap-4">
-          {/* Social Media Icons */}
-          <span className="text-gray-500 cursor-pointer">f</span>
-          <span className="text-gray-500 cursor-pointer">t</span>
-          <span className="text-gray-500 cursor-pointer">Be</span>
         </div>
       </div>
 
@@ -55,7 +53,7 @@ const HomePage = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-bold text-2xl px-4 py-2 rounded-lg">
-            Itfirm
+            Takusani Grou
           </div>
           <span className="text-xs text-gray-500 ml-2">IT Solutions & Service</span>
         </div>
@@ -64,40 +62,21 @@ const HomePage = () => {
         <div className="flex gap-6">
           <div className="flex items-center gap-1 cursor-pointer">
             <span>Home</span>
-            <ChevronDown size={16} />
+            {/* Removed ChevronDown and other links */}
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
             <span>Pages</span>
-            <ChevronDown size={16} />
+            {/* Removed ChevronDown and other links */}
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
             <span>Services</span>
-            <ChevronDown size={16} />
-          </div>
-          <div className="flex items-center gap-1 cursor-pointer">
-            <span>Portfolio</span>
-            <ChevronDown size={16} />
-          </div>
-          <div className="flex items-center gap-1 cursor-pointer">
-            <span>Blog</span>
-            <ChevronDown size={16} />
-          </div>
-          <div className="flex items-center gap-1 cursor-pointer">
-            <span>Elements</span>
-            <ChevronDown size={16} />
+            {/* Removed ChevronDown and other links */}
           </div>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-          <div className="flex items-center border border-gray-200 rounded px-3 py-1">
-            <input placeholder="Search..." className="outline-none text-sm" />
-            <Search size={18} className="text-gray-500 ml-2" />
-          </div>
-          <div className="flex items-center gap-1 cursor-pointer">
-            <span>English</span>
-            <ChevronDown size={16} />
-          </div>
+          {/* Removed Search Bar and English Dropdown */}
           <button className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-full px-4 py-2 flex items-center gap-2">
             Get a quote now <ArrowRight size={16} />
           </button>
