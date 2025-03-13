@@ -23,20 +23,58 @@ const Footer = () => {
             </ul>
           </div>
           <div className="p-5 sm:w-7/12 border-r text-center">
-            <h3 className="font-bold text-xl text-indigo-600 mb-4">Componentity</h3>
+            <h3 className="font-bold text-xl text-indigo-600 mb-4">Takusani Group</h3>
             <p className="text-gray-500 text-sm mb-10">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+              Takusani Group is a leading preferred Skills Development, Training and Enterprise Supplier Development company.
             </p>
           </div>
           <div className="p-5 sm:w-3/12">
             <div className="text-sm uppercase text-indigo-600 font-bold">Contact Us</div>
             <ul>
-              <li className="my-2">
-                <a className="hover:text-indigo-600" href="#">XXX XXXX, Floor 4 San Francisco, CA</a>
+              {/* Address */}
+              <li className="my-2 flex items-center">
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-gray-600 dark:text-slate-400">No. 11 Business Suite, 8 Incubation Drive, Riverside View, Fourways, 2021</p>
+                </div>
               </li>
-              <li className="my-2">
-                <a className="hover:text-indigo-600" href="#">contact@company.com</a>
+
+              {/* Phone */}
+              <li className="my-2 flex items-center">
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+                    <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                    <path d="M15 7a2 2 0 0 1 2 2"></path>
+                    <path d="M15 3a6 6 0 0 1 6 6"></path>
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-gray-600 dark:text-slate-400">+27 10 634 0505</p>
+                </div>
               </li>
+
+
+              {/* Email */}
+              <li className="my-2 flex items-center">
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+                    <path d="M12 12L2 4h20z"></path>
+                    <path d="M2 4v16l10 8 10-8V4z"></path>
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-gray-600 dark:text-slate-400">info@takusani.co.za</p>
+                </div>
+              </li>
+
+
+              {/* Working Hours */}
+            
             </ul>
           </div>
         </div>
@@ -58,7 +96,7 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <div className="my-5">© Copyright 2023. All Rights Reserved.</div>
+          <div className="my-5">© Copyright 2025. All Rights Reserved.</div>
         </div>
       </div>
     </footer>

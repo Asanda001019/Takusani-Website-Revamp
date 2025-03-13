@@ -1,4 +1,8 @@
-import React from 'react';
+import React from 'react'; 
+import Comp from "../assets/competition-commission_orig.jpg"
+import Training from "../assets/trainingf.png"
+import RAF from "../assets/RAF-logo.jpg"
+import DOLP from "../assets/DOLP.jpeg"
 
 const SponsorSection = () => {
   return (
@@ -12,12 +16,15 @@ const SponsorSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 mt-2 md:justify-around">
+        <br></br>
+        <br></br>
 
+        {/* Updated flex to ensure the logos are in one row */}
+        <div className="flex justify-center gap-10 mt-2">
           {/* Damelin Logo */}
           <div className="text-gray-400">
             <img
-              src="path_to_damelin_logo.svg" // Replace with actual Damelin logo path
+              src={Training} // Replace with actual Damelin logo path
               alt="Damelin"
               width="120"
               height="60"
@@ -28,7 +35,7 @@ const SponsorSection = () => {
           {/* Training Force Logo */}
           <div className="text-gray-400">
             <img
-              src="path_to_training_force_logo.svg" // Replace with actual Training Force logo path
+              src={Comp} // Replace with actual Training Force logo path
               alt="Training Force"
               width="120"
               height="60"
@@ -39,7 +46,7 @@ const SponsorSection = () => {
           {/* Department of Labour Logo */}
           <div className="text-gray-400">
             <img
-              src="path_to_department_of_labour_logo.svg" // Replace with actual Department of Labour logo path
+              src={RAF} // Replace with actual Department of Labour logo path
               alt="Department of Labour"
               width="120"
               height="60"
@@ -50,14 +57,13 @@ const SponsorSection = () => {
           {/* Road Accident Fund Logo */}
           <div className="text-gray-400">
             <img
-              src="path_to_road_accident_fund_logo.svg" // Replace with actual Road Accident Fund logo path
+              src={DOLP} // Replace with actual Road Accident Fund logo path
               alt="Road Accident Fund"
               width="120"
               height="60"
               className="w-auto h-15"
             />
           </div>
-
         </div>
       </div>
     </div>

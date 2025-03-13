@@ -116,61 +116,53 @@ const HomePage = () => {
       {/* Services Section */}
       <div className="bg-gray-50 py-6">
         <div className="container mx-auto px-6 -mt-16 relative z-30">
-          <div className="grid grid-cols-5 gap-4">
-            {/* UI/UX Design Card */}
+          <div className="grid grid-cols-4 gap-4">
+            {/* Training Card */}
             <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
               <div className="w-16 h-16 flex items-center justify-center mb-4">
+                {/* Replace with training icon */}
                 <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v18m9-9H3" />
                 </svg>
               </div>
-              <h3 className="font-medium text-lg">UI/UX Design</h3>
+              <h3 className="font-medium text-lg">Training</h3>
               <p className="text-gray-500 text-sm">Services</p>
             </div>
             
-            {/* Business Consultation Card */}
+            {/* ESD and SED Solution Card */}
             <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
               <div className="w-16 h-16 flex items-center justify-center mb-4">
+                {/* Replace with ESD icon */}
                 <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l7 7 7-7" />
                 </svg>
               </div>
-              <h3 className="font-medium text-lg">Business</h3>
-              <p className="text-gray-500 text-sm">Consultation</p>
+              <h3 className="font-medium text-lg">ESD & SED</h3>
+              <p className="text-gray-500 text-sm">Solution</p>
             </div>
             
-            {/* Website Development Card */}
+            {/* Skills Development Card */}
             <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
               <div className="w-16 h-16 flex items-center justify-center mb-4">
+                {/* Replace with skills development icon */}
                 <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
                 </svg>
               </div>
-              <h3 className="font-medium text-lg">Website</h3>
-              <p className="text-gray-500 text-sm">Development</p>
+              <h3 className="font-medium text-lg">Skills Development</h3>
+              <p className="text-gray-500 text-sm">Training</p>
             </div>
-            
-            {/* Support Management Card */}
+
+            {/* Employee Assistance Card */}
             <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
               <div className="w-16 h-16 flex items-center justify-center mb-4">
+                {/* Replace with employee assistance icon */}
                 <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2v20M2 12h20" />
                 </svg>
               </div>
-              <h3 className="font-medium text-lg">Support</h3>
-              <p className="text-gray-500 text-sm">Management</p>
-            </div>
-            
-            {/* Market Research Card */}
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center flex flex-col items-center">
-              <div className="w-16 h-16 flex items-center justify-center mb-4">
-                <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <h3 className="font-medium text-lg">Market</h3>
-              <p className="text-gray-500 text-sm">Research</p>
+              <h3 className="font-medium text-lg">Employee Assistance</h3>
+              <p className="text-gray-500 text-sm">Support</p>
             </div>
           </div>
         </div>

@@ -13,6 +13,10 @@ import ContactUs from './components/ContactUs'
 import ContactSection from './components/ContactForm'
 import Footer from './components/Footer'
 import SponsorSection from './components/SponsorSection'
+import TrainingPrograms from "./components/TrainingProgram"
+import SkillsDevelopment from "./components/SkillsDevelopment"
+import ESD from "./components/ESD"
+import EAP from "./components/EAP"
 
 function App() {
  
@@ -28,23 +32,32 @@ function App() {
     <br />
     <AboutUs/>
     <br/>
-    <OurServices />
-    <br />
+    {/* <OurServices />
+    <br /> */}
     <ServicesCards />
     <br />
-    <EachService />
-    <br />  
-    <Features />
-    <br />
+    {/* <EachService />
+    <br />   */}
+<TrainingPrograms/>
+    <br></br>
+
+    <SkillsDevelopment/>
+    <br></br>
+    <ESD/>
+    <br/>
+    <EAP/>
+    <br/>
+    {/* <Features />
+    <br /> */}
     <ContactUs />
     <br />  
-    <ContactSection />
-    <br />
-    <Footer />
-    <br />  
-    <SponsorSection />
-    
+    {/* <ContactSection />
+    <br /> */}
    
+    
+    <SponsorSection />
+    <br /> 
+    <Footer />
     </>
   )
 }

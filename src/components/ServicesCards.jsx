@@ -1,4 +1,9 @@
 import React from 'react';
+import Training from "../assets/training.jpeg"
+import ESD from "../assets/esd.jpg"
+import SKILLS from "../assets/skill.jpeg"
+import EAP from "../assets/eap.png"
+
 
 export const ServicesCards = () => {
   return (
@@ -8,23 +13,21 @@ export const ServicesCards = () => {
         <div className="relative">
           <img
             className="w-full"
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+            src={Training}
             alt="Product Image"
           />
-          <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
-            SALE
-          </div>
+         
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">Product Title</h3>
+          <h3 className="text-lg font-medium mb-2">TRAINING</h3>
           <p className="text-gray-600 text-sm mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
             sit amet euismod lorem.
           </p>
           <div className="flex items-center justify-between">
-            <span className="font-bold text-lg">$19.99</span>
+            
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              Buy Now
+              See More
             </button>
           </div>
         </div>
@@ -35,23 +38,21 @@ export const ServicesCards = () => {
         <div className="relative">
           <img
             className="w-full"
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+      src={SKILLS}
             alt="Product Image"
           />
-          <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
-            SALE
-          </div>
+         
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">Product Title</h3>
+          <h3 className="text-lg font-medium mb-2">SKILLS DEVELOPMENT</h3>
           <p className="text-gray-600 text-sm mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
             sit amet euismod lorem.
           </p>
           <div className="flex items-center justify-between">
-            <span className="font-bold text-lg">$19.99</span>
+            
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              Buy Now
+              See More
             </button>
           </div>
         </div>
@@ -62,23 +63,22 @@ export const ServicesCards = () => {
         <div className="relative">
           <img
             className="w-full"
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+            src={EAP}
             alt="Product Image"
           />
-          <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
-            SALE
-          </div>
+        
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">Product Title</h3>
+          <h3 className="text-lg font-medium mb-2">ESD & SED SOLUTIONS
+          </h3>
           <p className="text-gray-600 text-sm mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
             sit amet euismod lorem.
           </p>
           <div className="flex items-center justify-between">
-            <span className="font-bold text-lg">$19.99</span>
+           
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              Buy Now
+              See More
             </button>
           </div>
         </div>
@@ -89,23 +89,21 @@ export const ServicesCards = () => {
         <div className="relative">
           <img
             className="w-full"
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+            src={ESD}
             alt="Product Image"
           />
-          <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
-            SALE
-          </div>
+         
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">Product Title</h3>
+          <h3 className="text-lg font-medium mb-2">EMPLOYEE ASSISTANCE PROGRAMME</h3>
           <p className="text-gray-600 text-sm mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
             sit amet euismod lorem.
           </p>
           <div className="flex items-center justify-between">
-            <span className="font-bold text-lg">$19.99</span>
+            
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              Buy Now
+              Find More
             </button>
           </div>
         </div>
