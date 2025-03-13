@@ -1,9 +1,9 @@
 import React from 'react';
-import Training from "../assets/training.jpeg"
-import ESD from "../assets/esd.jpg"
-import SKILLS from "../assets/skill.jpeg"
-import EAP from "../assets/eap.png"
-
+import { Link } from 'react-router-dom'; // Importing Link from React Router
+import Training from "../assets/training.jpeg";
+import ESD from "../assets/esd.jpg";
+import SKILLS from "../assets/skill.jpeg";
+import EAP from "../assets/eap.png";
 
 export const ServicesCards = () => {
   return (
@@ -14,21 +14,22 @@ export const ServicesCards = () => {
           <img
             className="w-full"
             src={Training}
-            alt="Product Image"
+            alt="Training Image"
           />
-         
         </div>
         <div className="p-4">
           <h3 className="text-lg font-medium mb-2">TRAINING</h3>
           <p className="text-gray-600 text-sm mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
-            sit amet euismod lorem.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
+            sit amet euismod lorem. */}
           </p>
           <div className="flex items-center justify-between">
-            
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              See More
-            </button>
+            {/* Link component used here */}
+            <Link to="/training">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                See More
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -38,22 +39,22 @@ export const ServicesCards = () => {
         <div className="relative">
           <img
             className="w-full"
-      src={SKILLS}
-            alt="Product Image"
+            src={SKILLS}
+            alt="Skills Image"
           />
-         
         </div>
         <div className="p-4">
           <h3 className="text-lg font-medium mb-2">SKILLS DEVELOPMENT</h3>
           <p className="text-gray-600 text-sm mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
-            sit amet euismod lorem.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
+            sit amet euismod lorem. */}
           </p>
           <div className="flex items-center justify-between">
-            
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              See More
-            </button>
+          <Link to="/skillsdevelopment">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                See More
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -64,22 +65,21 @@ export const ServicesCards = () => {
           <img
             className="w-full"
             src={EAP}
-            alt="Product Image"
+            alt="EAP Image"
           />
-        
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">ESD & SED SOLUTIONS
-          </h3>
+          <h3 className="text-lg font-medium mb-2">ESD & SED SOLUTIONS</h3>
           <p className="text-gray-600 text-sm mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
-            sit amet euismod lorem.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
+            sit amet euismod lorem. */}
           </p>
           <div className="flex items-center justify-between">
-           
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              See More
-            </button>
+          <Link to="/esd">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                See More
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -90,21 +90,21 @@ export const ServicesCards = () => {
           <img
             className="w-full"
             src={ESD}
-            alt="Product Image"
+            alt="EAP Image"
           />
-         
         </div>
         <div className="p-4">
           <h3 className="text-lg font-medium mb-2">EMPLOYEE ASSISTANCE PROGRAMME</h3>
           <p className="text-gray-600 text-sm mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
-            sit amet euismod lorem.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante vel eros fermentum faucibus
+            sit amet euismod lorem. */}
           </p>
           <div className="flex items-center justify-between">
-            
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              Find More
-            </button>
+          <Link to="/eap">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                See More
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -38,8 +38,17 @@ const Navbar = () => {
         >
           Services
         </Link>
+
         <Link
-          to="/contact"
+          to="/servicescard"
+          className="cursor-pointer hover:text-indigo-600 transition-all duration-300"
+        >
+          ServiceCard
+        </Link>
+
+
+        <Link
+          to="/contactus"
           className="cursor-pointer hover:text-indigo-600 transition-all duration-300"
         >
           Contact

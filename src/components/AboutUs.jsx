@@ -63,13 +63,15 @@ const AboutUs = () => {
 
   return (
     <div className="py-16 bg-gray-900 text-white px-4 sm:px-6 lg:px-16">
+      {/* Heading for "Our Services" */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Every Feature Designed for the User</h1>
+        <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Our Services</h1>
         <p className="mt-4 text-lg text-gray-400">
           At every step of our process, we prioritize the user, ensuring that our products and services are designed with their needs in mind.
         </p>
       </div>
 
+      {/* Services Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {features.map((feature, index) => (
           <div key={index} className="bg-gray-800 p-8 rounded-lg shadow-lg transform transition duration-300 hover:bg-indigo-700">
