@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'; // Importing Link from React Router
 
 const AboutUsSection = () => {
   return (
+    <div className="bg-gray-100">
     <div className="sm:flex items-center max-w-screen-xl">
       <div className="sm:w-1/2 p-10">
         <div className="image object-center text-center">
@@ -49,6 +50,7 @@ const AboutUsSection = () => {
 
         </div>
       </div>
+    </div>
     </div>
   );
 };
