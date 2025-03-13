@@ -1,65 +1,43 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router
+import './App.css';
 
-import './App.css'
-import AboutUs from './components/AboutUs'
-import HomePage from './components/HomePage'
-import AboutUsSection from './components/AboutUsSection'
-import MainAbout from './components/MainAbout'
-import OurServices from './components/OurServices'
-import ServicesCards from './components/ServicesCards'
-import EachService from './components/EachService'
-import Features from './components/SECONDSERVICE'
-import ContactUs from './components/ContactUs'
-import ContactSection from './components/ContactForm'
-import Footer from './components/Footer'
-import SponsorSection from './components/SponsorSection'
-import TrainingPrograms from "./components/TrainingProgram"
-import SkillsDevelopment from "./components/SkillsDevelopment"
-import ESD from "./components/ESD"
-import EAP from "./components/EAP"
+// Import Components
+import HomePage from './components/HomePage';
+import AboutUsSection from './components/AboutUsSection';
+import MainAbout from './components/MainAbout';
+
+import TrainingPrograms from './components/TrainingProgram';
+import SkillsDevelopment from './components/SkillsDevelopment';
+import ESD from './components/ESD';
+import EAP from './components/EAP';
+import Layout from './components/Layout'; // Layout component that includes Navbar, Footer, and Sponsors
+import ContactUs from './components/ContactUs';
 
 function App() {
- 
-
   return (
-    <>
-    
-    <HomePage /> 
-    <br />
-    <AboutUsSection />
-    <br />
-    <MainAbout />
-    <br />
-    <AboutUs/>
-    <br/>
-    {/* <OurServices />
-    <br /> */}
-    <ServicesCards />
-    <br />
-    {/* <EachService />
-    <br />   */}
-<TrainingPrograms/>
-    <br></br>
+    <Router>
+      <Layout> {/* Layout Component for Navbar, Sponsors, and Footer */}
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<HomePage />} />
 
-    <SkillsDevelopment/>
-    <br></br>
-    <ESD/>
-    <br/>
-    <EAP/>
-    <br/>
-    {/* <Features />
-    <br /> */}
-    <ContactUs />
-    <br />  
-    {/* <ContactSection />
-    <br /> */}
-   
-    
-    <SponsorSection />
-    <br /> 
-    <Footer />
-    </>
-  )
+          {/* About Section */}
+          <Route path="/about" element={<AboutUsSection />} />
+          <Route path="/mainabout" element={<MainAbout />} />
+
+          {/* Service Sections */}
+          <Route path="/training" element={<TrainingPrograms />} />
+          <Route path="/skillsdevelopment" element={<SkillsDevelopment />} />
+          <Route path="/esd" element={<ESD />} />
+          <Route path="/eap" element={<EAP />} />
+
+        <Route path="/contact" element={<ContactUs />} />
+
+        </Routes>
+      </Layout>
+    </Router>
+  );
 }
 
-export default App
+export default App;
