@@ -12,9 +12,9 @@ const Navbar = () => {
             <polygon points="30,40 60,10 90,40" fill="#FFE600" />
             <rect x="54" y="40" width="12" height="50" fill="#2A3190" />
             <text x="70" y="85" fontFamily="Arial, sans-serif" fontSize="32" fontWeight="500" fill="#2A3190">
-              takusani
+              AKUSANI.
             </text>
-            <text x="70" y="105" fontFamily="Arial, sans-serif" fontSize="15" fill="#777777">
+            <text x="70" y="105" fontFamily="Arial, sans-serif" fontSize="25" fill="#777777">
               Adding Value To Your Organisation
             </text>
           </svg>
@@ -33,18 +33,18 @@ const Navbar = () => {
           About
         </Link>
         <Link
-          to="/AboutUs"
+          to="/servicescard"
           className="cursor-pointer hover:text-indigo-600 transition-all duration-300"
         >
           Services
         </Link>
 
-        <Link
+        {/* <Link
           to="/servicescard"
           className="cursor-pointer hover:text-indigo-600 transition-all duration-300"
         >
           ServiceCard
-        </Link>
+        </Link> */}
 
 
         <Link

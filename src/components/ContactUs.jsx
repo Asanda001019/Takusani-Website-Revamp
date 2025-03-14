@@ -23,14 +23,14 @@ export default function ContactUs() {
 
   return (
     <div>
-      <section className="bg-blue-50 dark:bg-slate-800" id="contact">
+      <section className="bg-gray-100" id="contact">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
               <p className="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
                 Contact
               </p>
-              <h2 className="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+              <h2 className="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-black text-3xl sm:text-5xl">
                 Get in Touch
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">We are always ready to support you.</p>
@@ -71,7 +71,7 @@ export default function ContactUs() {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address</h3>
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-black">Our Address</h3>
                       <p className="text-gray-600 dark:text-slate-400">8 Incubation Drive</p>
                       <p className="text-gray-600 dark:text-slate-400">Riverside View, Fourways</p>
                     </div>
@@ -87,7 +87,7 @@ export default function ContactUs() {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact</h3>
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-black">Contact</h3>
                       <p className="text-gray-600 dark:text-slate-400">Phone: +90 312 939 70 00</p>
                       <p className="text-gray-600 dark:text-slate-400">Fax: +90 312 939 75 15-16</p>
                       <p className="text-gray-600 dark:text-slate-400">Mail: info@cezerilabs.net</p>
@@ -103,64 +103,66 @@ export default function ContactUs() {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Working hours</h3>
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-black">Working hours</h3>
                       <p className="text-gray-600 dark:text-slate-400">Monday - Friday: 08:00 - 17:00</p>
                     </div>
                   </li>
                 </ul>
               </div>
+            {/* Form Section */}
+      {/* Form Section */}
+<div className="card h- max-w-6xl px-0 md:px-12 mt-20 md:py-4 bg-gray-100 shadow-lg" id="form">
+  <form onSubmit={handleSubmit}>
+    <div className="mb-4">
+      <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        required
+      />
+    </div>
 
-              {/* Form Section */}
-              <div className="card h-fit max-w-6xl px-0 md:px-12 md:py-4" id="form">
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      required
-                    />
-                  </div>
+    <div className="mb-4">
+      <label htmlFor="surname" className="block text-sm font-medium text-gray-700">Surname</label>
+      <input
+        type="text"
+        id="surname"
+        name="surname"
+        value={form.surname}
+        onChange={handleChange}
+        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        required
+      />
+    </div>
 
-                  <div className="mb-4">
-                    <label htmlFor="surname" className="block text-sm font-medium text-gray-700">Surname</label>
-                    <input
-                      type="text"
-                      id="surname"
-                      name="surname"
-                      value={form.surname}
-                      onChange={handleChange}
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      required
-                    />
-                  </div>
+    <div className="mb-4">
+      <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        required
+      />
+    </div>
 
-                  <div className="mb-4">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      required
-                    />
-                  </div>
+    <div>
+      <button
+        type="submit"
+        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-green-600 focus:outline-none"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
 
-                  <div>
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
+
               </div>
             </div>
           </div>

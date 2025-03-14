@@ -45,7 +45,7 @@ const HomePage = () => {
       setMessages([
         ...messages,
         { sender: 'user', text: userMessage },
-        { sender: 'bot', text: 'Thanks for your message! How else can I assist you?' },
+        { sender: 'bot', text: 'Thanks for your message! Please reach out to info@Takusani for now?' },
       ]);
       setUserMessage('');
     }
