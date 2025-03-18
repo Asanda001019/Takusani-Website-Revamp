@@ -26,7 +26,7 @@ const MainAbout = () => {
           {/* Reduce margin between heading and paragraph */}
           <div className="my-4 flex justify-center">
         
-            <p className="text-center text-sm leading-relaxed tracking-wide text-gray-500 max-w-4xl mx-auto">
+            <p className="text-center font-normal leading-relaxed tracking-wide text-black-500 max-w-4xl mx-auto">
               Takusani Group offers goal-oriented services in training, skills development, employee wellness programs, and economic development consultancy. As a 100% black-owned Level 1 BBBEE Contributor, the company provides practical, relevant, and sustainable solutions. Takusani is a trusted partner in helping organizations achieve responsible, sustainable economic development through accredited training and Enterprise Supplier Development Consultancy Services. They focus on creating strategies and processes that align with business objectives, improve performance, and drive growth. Takusani works closely with clients to provide realistic solutions and build strong, cooperative partnerships to ensure good corporate governance and sustainable development.
             </p>
           </div>
@@ -41,7 +41,7 @@ const MainAbout = () => {
               <FaEye className="text-white text-3xl" />
             </div>
             <h3 className="mt-6 text-black-100 text-xl font-bold fontFamily-Arial, sans-serif">Vision</h3>
-            <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-black-200">
+            <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-black-500">
               To be the leaders in Training, Skills Development, Enterprise Supplier Development and Socio Economic Development Consultancy and make a lasting positive economic impact in Africa and the rest of the world to the benefit of all.
             </p>
           </div>
@@ -52,7 +52,7 @@ const MainAbout = () => {
               <FaBullhorn className="text-white text-3xl" />
             </div>
             <h3 className="mt-6 text-blue-900 text-xl font-semibold">Mission</h3>
-            <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-black-200">
+            <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-black-500">
               To develop and enhance the performance of Corporates, SMMEs, and Government Sector by creating new and existing opportunities through sustainable relationships focused on people, effective leadership, policy business goals. We enable our clients to build capacity in order to have an impactful role in the economy.
             </p>
           </div>
@@ -63,7 +63,7 @@ const MainAbout = () => {
               <FaHandshake className="text-white text-3xl" />
             </div>
             <h3 className="mt-6 text-black-100 text-xl font-semibold">Values</h3>
-            <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-black-200">
+            <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-black-500">
               • Ethical
               <br />
               • Integrity
