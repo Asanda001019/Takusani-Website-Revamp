@@ -19,7 +19,7 @@ import ServicesCards from './components/ServicesCards';
 import CMS from "./cmspages/CMS";
 import LoginCMS from "./cmspages/LoginCMS";
 import UsersCMS from "./cmspages/UsersCMS";
-// import JobPostForm from "./cmspages/JobPostForm";
+import JobPostForm from "./cmspages/JobPostForm";
 
 function App() {
   return (
@@ -44,6 +44,7 @@ function App() {
             <Route path="/CMS" element={<CMS />}>
             <Route index element={<LoginCMS />} />
             <Route path="UsersCMS" element={<UsersCMS />} />
+            <Route path="JobPostForm" element={<JobPostForm />} />
          
           </Route>
         </Routes>

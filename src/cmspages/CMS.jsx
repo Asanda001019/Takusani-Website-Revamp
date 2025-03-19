@@ -79,7 +79,7 @@ export default function CMS() {
             {/* Navigation Links */}
             <nav style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
               <SideNavLink to="/CMS/UsersCMS">Users</SideNavLink>
-              <SideNavLink to="/CMS/EventsCMS">Events</SideNavLink>
+              <SideNavLink to="/CMS/JobPostForm">Job Posts</SideNavLink>
               <SideNavLink to="/CMS/TimetablesCMS">Timetable</SideNavLink>
               <SideNavLink to="/CMS/FormSubmissionsCMS">Contact Us</SideNavLink>
             </nav>

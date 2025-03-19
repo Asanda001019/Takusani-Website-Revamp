@@ -27,7 +27,7 @@ const CMS = () => {
           backgroundColor: '#f8f9fa',
           borderBottom: '1px solid #dee2e6'
         }}>
-          <h1>Ekukhanyeni CMS</h1>
+          <h1>Takusani Group CMS</h1>
           <div className="user-controls" style={{
             display: 'flex',
             alignItems: 'center',
@@ -73,7 +73,7 @@ const CMS = () => {
             Users
           </button>
           <button 
-            onClick={() => navigate('/CMS/EventsCMS')}
+            onClick={() => navigate('/CMS/JobPostForm')}
             style={{
               backgroundColor: '#f0f0f0',
               border: 'none',
@@ -82,7 +82,7 @@ const CMS = () => {
               cursor: 'pointer'
             }}
           >
-            Events
+            Job Posts
           </button>
           <button 
             onClick={() => navigate('/CMS/TimetableCMS')}
