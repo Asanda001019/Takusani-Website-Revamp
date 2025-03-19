@@ -24,10 +24,8 @@
 
 // src/firebase.js
 // src/firebase.js
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from "firebase/firestore";
-
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAEQkvfGijL1Ly2EM9sXe7bjDceS-TPVY4",
@@ -41,8 +39,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { auth, db, signInWithEmailAndPassword, createUserWithEmailAndPassword, collection, addDoc, getDocs, doc, deleteDoc, updateDoc };
-
+export { db };

@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import { User } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -27,6 +29,24 @@ const Footer = () => {
             <p className="text-gray-500 text-sm mb-10">
               Takusani Group is a leading preferred Skills Development, Training and Enterprise Supplier Development company.
             </p>
+            <Link
+            to="/CMS"
+            style={{
+              backgroundColor: '#2563eb',
+              color: 'white',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.375rem',
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              textDecoration: 'none',
+            }}
+          >
+            <User size={16} />
+            Staff Sign In
+          </Link>
           </div>
           <div className="p-5 sm:w-3/12">
             <div className="text-sm uppercase text-indigo-600 font-bold">Contact Us</div>

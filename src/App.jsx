@@ -14,50 +14,42 @@ import EAP from './components/EAP';
 import Layout from './components/Layout'; // Layout component that includes Navbar, Footer, and Sponsors
 import ContactUs from './components/ContactUs';
 import ServicesCards from './components/ServicesCards';
-import JobPostList from "./components/JobPostsDisplay";
+// import JobPostList from "./components/JobPostsDisplay";
 
 //CMS
-import Dashboard from "./cms/Dashboard";
-import LoginForm from "./cms/Login";
-import AdminUserForm from "./cms/AdmniUserForm";
-import JobPostForm from "./cms/JobPostForm";
+import CMS from "./cmspages/CMS";
+import LoginCMS from "./cmspages/LoginCMS";
+import UsersCMS from "./cmspages/UsersCMS";
+// import JobPostForm from "./cmspages/JobPostForm";
 
 function App() {
   return (
     <Router>
-      <Layout> {/* Layout Component for Navbar, Sponsors, and Footer */}
-        <Routes>
-          {/* Home Page */}
-          <Route path="/" element={<HomePage />} />
 
-          {/* About Section */}
-          <Route path="/about" element={<AboutUsSection />} />
-          <Route path="/mainabout" element={<MainAbout />} />
+    <Routes>
+          <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutUsSection />} />
+          <Route path="mainabout" element={<MainAbout />} />
+          <Route path="AboutUs" element={<AboutUs />} />
+          <Route path='servicescard' element={<ServicesCards />} />
+          <Route path="training" element={<TrainingPrograms />} />
+          <Route path="skillsdevelopment" element={<SkillsDevelopment />} />
+          <Route path="esd" element={<ESD />} />
+          <Route path="eap" element={<EAP />} />
+          <Route path="contactus" element={<ContactUs />} />
+          
+          </Route>
+   
 
-          {/* Service Sections */}
-
-<Route path="/AboutUs" element={<AboutUs />} />
-<Route path='/servicescard' element={<ServicesCards />} />
-
-          <Route path="/training" element={<TrainingPrograms />} />
-          <Route path="/skillsdevelopment" element={<SkillsDevelopment />} />
-          <Route path="/esd" element={<ESD />} />
-          <Route path="/eap" element={<EAP />} />
-        <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/JobPostsDisplay" element={<JobPostList/>} />
+            <Route path="/CMS" element={<CMS />}>
+            <Route index element={<LoginCMS />} />
+            <Route path="UsersCMS" element={<UsersCMS />} />
+         
+          </Route>
         </Routes>
-      </Layout>   
-<Routes>
-<Route path="/cms" element={<Dashboard />} />
-<Route path="/cms/Login" element={<LoginForm />} />
-<Route path="/cms/JobPostForm" element={<JobPostForm />} />
-<Route path="/cms/AdminUserForm" element={<AdminUserForm />} />
-</Routes>
-
-
-
-
-    </Router>
+       
+      </Router>
 
   );
 }

@@ -1,9 +1,10 @@
 import React from 'react';
-import Navbar from './Navbar';  // Navbar is inside Layout
-import SponsorSection from './SponsorSection';  // Sponsors section component
-import Footer from './Footer';  // Footer component
+import { Outlet } from 'react-router-dom'; // Import Outlet
+import Navbar from './Navbar';
+import SponsorSection from './SponsorSection';
+import Footer from './Footer';
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
@@ -11,7 +12,7 @@ const Layout = ({ children }) => {
 
       {/* Main Content */}
       <main className="flex-grow">
-        {children}
+        <Outlet /> {/* Replace children with Outlet */}
       </main>
 
       {/* Sponsors Section */}
