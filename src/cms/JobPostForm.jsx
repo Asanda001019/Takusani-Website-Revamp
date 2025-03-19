@@ -1,237 +1,245 @@
-import React, { useState } from 'react';
+// src/components/JobPostForm.js
+import React, { useState, useEffect } from 'react';
+import { db, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from '../utilis/FirebaseConfig';
+
 
 const JobPostForm = () => {
-  const [formData, setFormData] = useState({
-    jobTitle: '',
-    description: '',
-    qualification: '',
-    requirements: '',
-    location: '',
-    deadline: '',
-    contractType: 'full-time', // Default contract type
-    paymentType: 'hourly', // Default payment type
-    applicationLink: '',
-  });
+  const [jobTitle, setJobTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [requirements, setRequirements] = useState("");
+  const [location, setLocation] = useState("");
+  const [deadline, setDeadline] = useState("");
+  const [contractType, setContractType] = useState("");
+  const [paymentType, setPaymentType] = useState("");
+  const [applicationLink, setApplicationLink] = useState("");
+  const [jobPosts, setJobPosts] = useState([]);
+  const [editingJobId, setEditingJobId] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const jobPostCollectionRef = collection(db, "jobPosts");
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const data = await getDocs(jobPostCollectionRef);
+      setJobPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    fetchJobs();
+  }, [jobPosts]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      if (editingJobId) {
+        // Editing an existing job post
+        const jobDocRef = doc(db, "jobPosts", editingJobId);
+        await updateDoc(jobDocRef, {
+          jobTitle,
+          description,
+          qualification,
+          requirements,
+          location,
+          deadline,
+          contractType,
+          paymentType,
+          applicationLink,
+        });
+        setEditingJobId(null);
+      } else {
+        // Adding a new job post
+        await addDoc(jobPostCollectionRef, {
+          jobTitle,
+          description,
+          qualification,
+          requirements,
+          location,
+          deadline,
+          contractType,
+          paymentType,
+          applicationLink,
+        });
+      }
+
+      // Reset form fields after submitting
+      setJobTitle("");
+      setDescription("");
+      setQualification("");
+      setRequirements("");
+      setLocation("");
+      setDeadline("");
+      setContractType("");
+      setPaymentType("");
+      setApplicationLink("");
+    } catch (error) {
+      console.error("Error adding job post: ", error);
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    // Handle the form submission (e.g., send data to the server, reset form, etc.)
+  const handleDelete = async (id) => {
+    try {
+      await deleteDoc(doc(db, "jobPosts", id));
+    } catch (error) {
+      console.error("Error deleting job post: ", error);
+    }
+  };
+
+  const handleEdit = (job) => {
+    setJobTitle(job.jobTitle);
+    setDescription(job.description);
+    setQualification(job.qualification);
+    setRequirements(job.requirements);
+    setLocation(job.location);
+    setDeadline(job.deadline);
+    setContractType(job.contractType);
+    setPaymentType(job.paymentType);
+    setApplicationLink(job.applicationLink);
+    setEditingJobId(job.id);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-          <h1 className="text-2xl font-semibold text-center mb-6">Create Job Posting</h1>
+    <div className="w-full max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-4">Job Post Form</h2>
 
-          <form onSubmit={handleSubmit}>
-            <div className="space-y-6">
-
-              {/* Job Title */}
-              <div className="relative">
-                <input
-                  type="text"
-                  id="jobTitle"
-                  name="jobTitle"
-                  className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  placeholder="Job Title"
-                  value={formData.jobTitle}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="jobTitle"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Job Title
-                </label>
-              </div>
-
-              {/* Job Description */}
-              <div className="relative">
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  className="peer placeholder-transparent h-24 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  placeholder="Job Description"
-                  value={formData.description}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="description"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Job Description
-                </label>
-              </div>
-
-              {/* Job Qualification */}
-              <div className="relative">
-                <textarea
-                  id="qualification"
-                  name="qualification"
-                  rows="3"
-                  className="peer placeholder-transparent h-24 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  placeholder="Qualification"
-                  value={formData.qualification}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="qualification"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Qualification
-                </label>
-              </div>
-
-              {/* Job Requirements */}
-              <div className="relative">
-                <textarea
-                  id="requirements"
-                  name="requirements"
-                  rows="3"
-                  className="peer placeholder-transparent h-24 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  placeholder="Requirements"
-                  value={formData.requirements}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="requirements"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Requirements
-                </label>
-              </div>
-
-              {/* Location */}
-              <div className="relative">
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  placeholder="Location"
-                  value={formData.location}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="location"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Location
-                </label>
-              </div>
-
-              {/* Application Deadline */}
-              <div className="relative">
-                <input
-                  type="date"
-                  id="deadline"
-                  name="deadline"
-                  className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  value={formData.deadline}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="deadline"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Application Deadline
-                </label>
-              </div>
-
-              {/* Contract Type */}
-              <div className="relative">
-                <select
-                  id="contractType"
-                  name="contractType"
-                  className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  value={formData.contractType}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="full-time">Full-Time</option>
-                  <option value="part-time">Part-Time</option>
-                  <option value="freelance">Freelance</option>
-                </select>
-                <label
-                  htmlFor="contractType"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Contract Type
-                </label>
-              </div>
-
-              {/* Payment Type */}
-              <div className="relative">
-                <select
-                  id="paymentType"
-                  name="paymentType"
-                  className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  value={formData.paymentType}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="hourly">Hourly</option>
-                  <option value="salary">Salary</option>
-                </select>
-                <label
-                  htmlFor="paymentType"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Payment Type
-                </label>
-              </div>
-
-              {/* Application Link */}
-              <div className="relative">
-                <input
-                  type="url"
-                  id="applicationLink"
-                  name="applicationLink"
-                  className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                  placeholder="Application Link"
-                  value={formData.applicationLink}
-                  onChange={handleChange}
-                  required
-                />
-                <label
-                  htmlFor="applicationLink"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Application Link
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <div className="mt-6">
-                <button
-                  type="submit"
-                  className="w-full py-3 px-6 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
-                >
-                  Post Job
-                </button>
-              </div>
-            </div>
-          </form>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="jobTitle">Job Title</label>
+          <input
+            type="text"
+            id="jobTitle"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={jobTitle}
+            onChange={(e) => setJobTitle(e.target.value)}
+            required
+          />
         </div>
-      </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="qualification">Qualification</label>
+          <input
+            type="text"
+            id="qualification"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={qualification}
+            onChange={(e) => setQualification(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="requirements">Requirements</label>
+          <input
+            type="text"
+            id="requirements"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={requirements}
+            onChange={(e) => setRequirements(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="location">Location</label>
+          <input
+            type="text"
+            id="location"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="deadline">Deadline</label>
+          <input
+            type="date"
+            id="deadline"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={deadline}
+            onChange={(e) => setDeadline(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="contractType">Contract Type</label>
+          <input
+            type="text"
+            id="contractType"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={contractType}
+            onChange={(e) => setContractType(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="paymentType">Payment Type</label>
+          <input
+            type="text"
+            id="paymentType"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={paymentType}
+            onChange={(e) => setPaymentType(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="applicationLink">Application Link</label>
+          <input
+            type="url"
+            id="applicationLink"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={applicationLink}
+            onChange={(e) => setApplicationLink(e.target.value)}
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+        >
+          {editingJobId ? 'Update Job Post' : 'Post Job'}
+        </button>
+      </form>
+
+      <h3 className="mt-8 text-lg font-semibold">Posted Jobs</h3>
+      <ul className="mt-4">
+        {jobPosts.map((job) => (
+          <li key={job.id} className="border-b py-2">
+            <h4 className="font-bold">{job.jobTitle}</h4>
+            <p>{job.description}</p>
+            <div className="mt-2 flex justify-between">
+              <button
+                className="text-blue-500"
+                onClick={() => handleEdit(job)}
+              >
+                Edit
+              </button>
+              <button
+                className="text-red-500"
+                onClick={() => handleDelete(job.id)}
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
