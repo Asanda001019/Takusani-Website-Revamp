@@ -15,10 +15,10 @@ import {
   where, 
   updateDoc 
 } from 'firebase/firestore';
-import { db } from '../utilis/FirebaseConfig';
+import { app, db } from '../utilis/FirebaseConfig'; // Import app as well
 
 // AddUserModal component
-const AddUserModal = ({ isOpen, onClose, onAddUser }) => {
+const AddUserModal = ({ isOpen, onClose, onAddUser, triggerRefetch }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -81,7 +81,7 @@ const AddUserModal = ({ isOpen, onClose, onAddUser }) => {
     // If no errors, register user
     if (!newErrors.email && !newErrors.password && !newErrors.confirmPassword && !newErrors.name) {
       try {
-        const auth = getAuth();
+        const auth = getAuth(app); // Pass the app instance
         // Create user with Firebase Auth
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         
@@ -97,6 +97,8 @@ const AddUserModal = ({ isOpen, onClose, onAddUser }) => {
           createdAt: new Date()
         });
         
+        console.log('User added with ID:', userDocRef.id);
+        
         // Add user to the state
         onAddUser({
           id: userCredential.user.uid,
@@ -105,6 +107,15 @@ const AddUserModal = ({ isOpen, onClose, onAddUser }) => {
           email: email,
           color: color
         });
+        
+        // Trigger refetch to ensure UI is updated
+        triggerRefetch();
+        
+        // Clear form
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setName('');
         
         // Close modal
         onClose();
@@ -253,7 +264,7 @@ const AddUserModal = ({ isOpen, onClose, onAddUser }) => {
 };
 
 // Edit User Modal component
-const EditUserModal = ({ isOpen, onClose, user, onUpdateUser }) => {
+const EditUserModal = ({ isOpen, onClose, user, onUpdateUser, triggerRefetch }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState({
@@ -311,12 +322,17 @@ const EditUserModal = ({ isOpen, onClose, user, onUpdateUser }) => {
           updatedAt: new Date()
         });
         
+        console.log('User updated with ID:', user.docId);
+        
         // Update user in the state
         onUpdateUser({
           ...user,
           name: name,
           email: email
         });
+        
+        // Trigger refetch to ensure UI is updated
+        triggerRefetch();
         
         // Close modal
         onClose();
@@ -438,12 +454,19 @@ const UsersCMS = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0); // Add a refresh trigger
   const usersPerPage = 5;
   
-  // Fetch users from Firestore on component mount
+  // Trigger a refetch
+  const triggerRefetch = () => {
+    setRefreshTrigger(prev => prev + 1);
+  };
+  
+  // Fetch users from Firestore on component mount and when refreshTrigger changes
   useEffect(() => {
     const fetchUsers = async () => {
       try {
+        console.log('Fetching users...');
         setLoading(true);
         const usersCollection = collection(db, "users");
         const querySnapshot = await getDocs(usersCollection);
@@ -460,6 +483,7 @@ const UsersCMS = () => {
           });
         });
         
+        console.log('Fetched users:', fetchedUsers);
         setUsers(fetchedUsers);
         setError(null);
       } catch (error) {
@@ -471,7 +495,7 @@ const UsersCMS = () => {
     };
     
     fetchUsers();
-  }, []);
+  }, [refreshTrigger]); // Re-run when refreshTrigger changes
   
   // Filter users based on search term
   const filteredUsers = users.filter(user => 
@@ -500,6 +524,9 @@ const UsersCMS = () => {
       const updatedUsers = users.filter(user => user.id !== userId);
       setUsers(updatedUsers);
       console.log(`Deleted user with ID: ${userId}`);
+      
+      // Trigger refetch to ensure UI is updated
+      triggerRefetch();
     } catch (error) {
       console.error('Error deleting user:', error);
       setError('Failed to delete user. Please try again.');
@@ -511,7 +538,7 @@ const UsersCMS = () => {
   };
   
   const handleAddNewUser = (newUser) => {
-    setUsers([...users, newUser]);
+    setUsers(prevUsers => [...prevUsers, newUser]);
     console.log('New user added:', newUser);
   };
   
@@ -523,6 +550,10 @@ const UsersCMS = () => {
     console.log('User updated:', updatedUser);
   };
   
+  // Current admin
+  const auth = getAuth(app);
+  const currentAdmin = auth.currentUser;
+
   return (
     <div style={{ 
       fontFamily: 'Arial, sans-serif',
@@ -574,9 +605,18 @@ const UsersCMS = () => {
             height: '40px', 
             borderRadius: '50%', 
             backgroundColor: '#eee',
-            marginRight: '10px'
-          }}></div>
-          <span style={{ fontWeight: 'normal' }}>Admin</span>
+            marginRight: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#333',
+            fontWeight: 'bold'
+          }}>
+            {currentAdmin?.email?.charAt(0).toUpperCase() || 'A'}
+          </div>
+          <span style={{ fontWeight: 'normal' }}>
+            {currentAdmin?.email?.split('@')[0] || 'Admin'}
+          </span>
         </div>
       </div>
       
@@ -612,7 +652,6 @@ const UsersCMS = () => {
             <thead>
               <tr style={{ borderBottom: '1px solid #eee' }}>
                 <th style={{ textAlign: 'left', padding: '10px 15px', fontWeight: 'normal', color: '#666' }}>User Name</th>
-                {/* <th style={{ textAlign: 'left', padding: '10px 15px', fontWeight: 'normal', color: '#666' }}>User ID</th> */}
                 <th style={{ textAlign: 'left', padding: '10px 15px', fontWeight: 'normal', color: '#666' }}>Email</th>
                 <th style={{ textAlign: 'left', padding: '10px 15px', fontWeight: 'normal', color: '#666' }}>Actions</th>
               </tr>
@@ -626,11 +665,17 @@ const UsersCMS = () => {
                       height: '30px', 
                       borderRadius: '50%', 
                       backgroundColor: user.color,
-                      marginRight: '10px'
-                    }}></div>
+                      marginRight: '10px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#fff',
+                      fontWeight: 'bold'
+                    }}>
+                      {user.name?.charAt(0).toUpperCase() || '?'}
+                    </div>
                     {user.name}
                   </td>
-                  {/* <td style={{ padding: '15px' }}>{user.id}</td> */}
                   <td style={{ padding: '15px' }}>{user.email}</td>
                   <td style={{ padding: '15px' }}>
                     <button
@@ -723,6 +768,7 @@ const UsersCMS = () => {
         isOpen={isAddModalOpen} 
         onClose={() => setIsAddModalOpen(false)} 
         onAddUser={handleAddNewUser}
+        triggerRefetch={triggerRefetch}
       />
       
       {/* Edit User Modal */}
@@ -731,6 +777,7 @@ const UsersCMS = () => {
         onClose={() => setIsEditModalOpen(false)} 
         user={currentUser}
         onUpdateUser={handleUpdateUser}
+        triggerRefetch={triggerRefetch}
       />
     </div>
   );
