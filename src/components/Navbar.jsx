@@ -39,12 +39,12 @@ const Navbar = () => {
           Services
         </Link>
 
-        {/* <Link
-          to="/servicescard"
+        <Link
+          to="/JobListingPage"
           className="cursor-pointer hover:text-indigo-600 transition-all duration-300"
         >
-          ServiceCard
-        </Link> */}
+          Job Posts
+        </Link>
 
 
         <Link

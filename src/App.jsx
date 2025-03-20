@@ -13,7 +13,7 @@ import EAP from './components/EAP';
 import Layout from './components/Layout'; // Layout component that includes Navbar, Footer, and Sponsors
 import ContactUs from './components/ContactUs';
 import ServicesCards from './components/ServicesCards';
-// import JobPostList from "./components/JobPostsDisplay";
+import JobListingPage from "./components/JobListingPage";
 
 //CMS
 import CMS from "./cmspages/CMS";
@@ -30,6 +30,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutUsSection />} />
           <Route path="mainabout" element={<MainAbout />} />
+          <Route path="JobListingPage" element={<JobListingPage />} />
       
           <Route path='servicescard' element={<ServicesCards />} />
           <Route path="training" element={<TrainingPrograms />} />
