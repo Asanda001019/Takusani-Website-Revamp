@@ -136,8 +136,8 @@ const LoginCMS = () => {
           style={logoStyles}
         />
 
-        <h1 style={titleStyles}> Sign In</h1>
-        <p style={subtitleStyles}>Welcome please sign in...</p>
+        <h3 style={titleStyles}> Welcome please sign in...</h3>
+        
         
         {error && <p style={errorStyles}>{error}</p>}
         
