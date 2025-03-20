@@ -7,50 +7,67 @@ const EAP = () => {
     'Employee Wellness Solutions',
   ];
 
+  // Updated color scheme with yellow and dark navy
+  const colors = {
+    primary: '#0a1128', // Dark navy - for primary elements
+    secondary: '#1282a2', // Medium blue - complementary to primary
+    accent: '#ffc857', // Bright yellow - for highlights and accents
+    lightAccent: '#ffeecc', // Light yellow - for subtle highlights
+    text: '#0a1128', // Dark navy - for text
+    lightText: '#ffffff', // White - for text on dark backgrounds
+  };
+
   return (
-    <div className="py-16  text-white px-4 sm:px-6 lg:px-16"
-    style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
-      {/* Paragraph Header */}
-      <div className="text-center mb-16">
-        <p className="text-base font-semibold leading-6 text-indigo-500 uppercase">
+    <div className="max-w-4xl mx-auto p-6">
+      {/* Header Section */}
+      <div className="mb-8" style={{ backgroundColor: colors.primary, padding: '2rem', borderRadius: '0.5rem' }}>
+        <h1 className="text-3xl font-bold text-center mb-2" style={{ color: colors.accent }}>
           Employee Assistance Programme
-        </p>
-        <h4 className="mt-2 text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9">
+        </h1>
+        <h2 className="text-xl text-center" style={{ color: colors.lightText }}>
           Bespoke Health and Financial Solutions
-        </h4>
-        <p className="mt-4 text-lg text-gray-400">
-          Our bespoke health and financial solutions are customised based on the unique requirements of each organisation. We have the infrastructure and ability to impeccably provide services to employees across all nine provinces.
+        </h2>
+      </div>
+
+      {/* Main Content */}
+      <div className="bg-white p-6 rounded-lg shadow-md mb-8" style={{ borderTop: `4px solid ${colors.accent}` }}>
+        <p className="mb-4 text-lg" style={{ color: colors.text }}>
+          Our bespoke health and financial solutions are customised based on the unique requirements of each organisation. 
+          We have the infrastructure and ability to impeccably provide services to employees across all nine provinces.
         </p>
-        <p className="mt-4 text-lg text-gray-400">
-          We advocate prevention and early detection of chronic diseases of lifestyle, stress and depression, rather than focusing solely on the treatment. We are specialists in Employee Financial Wellness solutions. A healthy workforce can enhance productivity and reduce absenteeism.
+        
+        <p className="mb-4 text-lg" style={{ color: colors.text }}>
+          We advocate prevention and early detection of chronic diseases of lifestyle, stress and depression, 
+          rather than focusing solely on the treatment. We are specialists in Employee Financial Wellness solutions. 
+          A healthy workforce can enhance productivity and reduce absenteeism.
         </p>
-        <p className="mt-4 text-lg text-gray-400">
+        
+        <p className="text-lg" style={{ color: colors.text }}>
           Our Employee Assistance Program places a strong emphasis on ensuring a return on healthcare investment.
         </p>
       </div>
 
-      {/* Employee Assistance Solutions Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Solutions Column */}
-        <div>
-          <h5 className="text-xl font-extrabold text-indigo-500">Employee Assistance Programme Solutions</h5>
-          <ul className="mt-4 space-y-3 font-medium">
-            {employeeAssistanceSolutions.map((service, index) => (
-              <li key={index} className="flex items-start">
-                <div className="flex-shrink-0">
-                  <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 000-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <p className="ml-3 leading-5 text-gray-600">{service}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Solutions Section */}
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h3 className="text-xl font-semibold mb-6 pb-2" style={{ color: colors.primary, borderBottom: `2px solid ${colors.accent}` }}>
+          Employee Assistance Programme Solutions
+        </h3>
+        
+        <ul className="space-y-4">
+          {employeeAssistanceSolutions.map((service, index) => (
+            <li 
+              key={index} 
+              className="flex items-center p-4 rounded-md transition-all duration-300 hover:bg-gray-50"
+              style={{ backgroundColor: index % 2 === 0 ? colors.lightAccent : 'white' }}
+            >
+              <div 
+                className="w-3 h-3 rounded-full mr-4" 
+                style={{ backgroundColor: colors.accent, border: `1px solid ${colors.primary}` }}
+              ></div>
+              <span className="text-lg" style={{ color: colors.text }}>{service}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
