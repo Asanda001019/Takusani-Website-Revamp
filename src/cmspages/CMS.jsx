@@ -36,7 +36,7 @@ export default function CMS() {
           {/* Sidebar */}
           <div
             style={{
-              backgroundColor: "#FEF5DA",
+              backgroundColor: "#111875",
               padding: "20px",
               width: "260px",
               height: "100vh",
@@ -125,8 +125,8 @@ const SideNavLink = ({ to, children }) => (
     to={to}
     style={{
       display: "block",
-      backgroundColor: "#111875",
-      color: "#fff",
+      backgroundColor: "yellow",
+      color: "black",
       fontSize: "18px",
       fontWeight: "600",
       padding: "12px 0",
