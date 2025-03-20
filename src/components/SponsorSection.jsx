@@ -9,7 +9,7 @@ import HIGH from "../assets/HIGH.jpeg";
 
 export default function SponsorSection() {
   const sponsors = [
-    { image: PNP, name: "PicknPay" },
+   
     { image: SETA, name: "WRSETA" },
     { image: PNP, name: "PicknPay" }, // You might want to replace this with the correct image
     { image: NURT, name: "INURTURE" },
@@ -32,6 +32,7 @@ export default function SponsorSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-manrope text-5xl text-center font-bold text-gray-900">Our Sponsors</h2>
+          <br></br>
           <p className="max-w-md mx-auto mt-1 text-center text-gray-500">
             We are thankful to each and every company that sponsored our plugin, which helped us continue working on it.
           </p>
