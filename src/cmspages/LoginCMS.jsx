@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/Screenshot__141_-removebg-preview.png';
 
 const LoginCMS = () => {
   const [email, setEmail] = useState('');
@@ -130,7 +131,7 @@ const LoginCMS = () => {
     <div style={containerStyles}>
       <div style={formContainerStyles}>
         <img
-          src="../../src/assets/Ekukhanyeni Logo 2.jpg"
+          src={logo}
           alt="School Logo"
           style={logoStyles}
         />
