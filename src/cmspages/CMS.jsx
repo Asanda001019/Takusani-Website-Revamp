@@ -80,8 +80,7 @@ export default function CMS() {
             <nav style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
               <SideNavLink to="/CMS/UsersCMS">Users</SideNavLink>
               <SideNavLink to="/CMS/JobPostForm">Job Posts</SideNavLink>
-              <SideNavLink to="/CMS/TimetablesCMS">Timetable</SideNavLink>
-              <SideNavLink to="/CMS/FormSubmissionsCMS">Contact Us</SideNavLink>
+             
             </nav>
           </div>
 
@@ -126,7 +125,7 @@ const SideNavLink = ({ to, children }) => (
     to={to}
     style={{
       display: "block",
-      backgroundColor: "#1D4ED8",
+      backgroundColor: "#111875",
       color: "#fff",
       fontSize: "18px",
       fontWeight: "600",

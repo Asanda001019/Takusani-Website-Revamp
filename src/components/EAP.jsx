@@ -8,7 +8,8 @@ const EAP = () => {
   ];
 
   return (
-    <div className="py-16 bg-gray-900 text-white px-4 sm:px-6 lg:px-16">
+    <div className="py-16  text-white px-4 sm:px-6 lg:px-16"
+    style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
       {/* Paragraph Header */}
       <div className="text-center mb-16">
         <p className="text-base font-semibold leading-6 text-indigo-500 uppercase">

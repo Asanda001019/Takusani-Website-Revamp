@@ -15,8 +15,8 @@ const AboutUsSection = () => {
           <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">
             About us
           </span>
-          <h2 className="my-4 font-bold text-3xl sm:text-4xl">
-            About <span className="text-indigo-600">Takusani Group</span>
+          <h2 className="my-4 font-bold text-3xl sm:text-4xl text-yellow-300">
+            About <span className="text-[#111875]">Takusani Group</span>
           </h2>
           <p className="text-gray-700">
             Takusani is the preferred service provider for organisations towards achieving and maintaining
@@ -27,8 +27,8 @@ const AboutUsSection = () => {
           {/* Wrap the button with the Link component */}
           <Link to="/mainabout">
             <button
-              className="mt-4 bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none py-2 px-4 flex items-center space-x-2 rounded"
-            >
+              className="mt-4 text-white hover:bg-indigo-700 focus:outline-none py-2 px-4 flex items-center space-x-2 rounded"
+              style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

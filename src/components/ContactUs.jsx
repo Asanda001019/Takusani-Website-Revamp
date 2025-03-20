@@ -23,7 +23,8 @@ export default function ContactUs() {
 
   return (
     <div>
-      <section className="bg-gray-100" id="contact">
+      <section className="bg-gray-100" id="contact"
+      style={{ backgroundColor: 'rgb(11, 18, 75)' }} >
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
@@ -62,7 +63,7 @@ export default function ContactUs() {
 
                 <ul className="mb-6 md:mb-0">
                   <li className="flex">
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                    <div className="flex h-10 w-10 items-center justify-center rounded text-yellow-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
                         strokeLinejoin="round" className="h-6 w-6">
@@ -71,13 +72,13 @@ export default function ContactUs() {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-black">Our Address</h3>
-                      <p className="text-gray-600 dark:text-slate-400">8 Incubation Drive</p>
-                      <p className="text-gray-600 dark:text-slate-400">Riverside View, Fourways</p>
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-yellow-300 ">Our Address</h3>
+                      <p className="text-gray-100">8 Incubation Drive</p>
+                      <p className="text-gray-100">Riverside View, Fourways</p>
                     </div>
                   </li>
                   <li className="flex">
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                    <div className="flex h-10 w-10 items-center justify-center rounded text-yellow-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
                         strokeLinejoin="round" className="h-6 w-6">
@@ -87,14 +88,14 @@ export default function ContactUs() {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-black">Contact</h3>
-                      <p className="text-gray-600 dark:text-slate-400">Phone: +90 312 939 70 00</p>
-                      <p className="text-gray-600 dark:text-slate-400">Fax: +90 312 939 75 15-16</p>
-                      <p className="text-gray-600 dark:text-slate-400">Mail: info@cezerilabs.net</p>
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-yellow-300">Contact</h3>
+                      <p className="text-gray-100">Phone: +90 312 939 70 00</p>
+                      <p className="text-gray-100">Fax: +90 312 939 75 15-16</p>
+                      <p className="text-gray-100">Mail: info@Takusani</p>
                     </div>
                   </li>
                   <li className="flex">
-                    <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                    <div className="flex h-10 w-10 items-center justify-center rounded text-yellow-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
                         strokeLinejoin="round" className="h-6 w-6">
@@ -103,8 +104,8 @@ export default function ContactUs() {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-black">Working hours</h3>
-                      <p className="text-gray-600 dark:text-slate-400">Monday - Friday: 08:00 - 17:00</p>
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-yellow-300">Working hours</h3>
+                      <p className="text-gray-100">Monday - Friday: 08:00 - 17:00</p>
                     </div>
                   </li>
                 </ul>
