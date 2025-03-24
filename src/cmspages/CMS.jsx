@@ -26,7 +26,7 @@ export default function CMS() {
   }, [auth]);
 
   if (loading) {
-    return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>Loading...</div>;
+    return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>Loading please wait...</div>;
   }
 
   return (
@@ -36,7 +36,7 @@ export default function CMS() {
           {/* Sidebar */}
           <div
             style={{
-              backgroundColor: "#111875",
+              backgroundColor: "#111222",
               padding: "20px",
               width: "260px",
               height: "100vh",

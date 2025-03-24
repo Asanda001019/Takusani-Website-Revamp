@@ -9,9 +9,8 @@ import HIGH from "../assets/HIGH.jpeg";
 
 export default function SponsorSection() {
   const sponsors = [
-   
     { image: SETA, name: "WRSETA" },
-    { image: PNP, name: "PicknPay" }, // You might want to replace this with the correct image
+    { image: PNP, name: "PicknPay" },
     { image: NURT, name: "INURTURE" },
     { image: MOBICEL, name: "MOBICEL" },
     { image: MUTUAL, name: "OLD MUTUAL" },
@@ -32,12 +31,12 @@ export default function SponsorSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-manrope text-5xl text-center font-bold text-gray-900">Our Sponsors</h2>
-          <br></br>
+          <br />
           <p className="max-w-md mx-auto mt-1 text-center text-gray-500">
             We are thankful to each and every company that sponsored our plugin, which helped us continue working on it.
           </p>
         </div>
-        
+
         {/* Scroll buttons */}
         <div className="relative">
           <button 
@@ -49,7 +48,7 @@ export default function SponsorSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          
+
           {/* Sponsors container with horizontal scroll */}
           <div 
             id="sponsors-container"
@@ -57,7 +56,7 @@ export default function SponsorSection() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {sponsors.map((sponsor, index) => (
-              <div key={index} className="flex-shrink-0 w-48 snap-center group">
+              <div key={index} className="flex-shrink-0 w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 snap-center group">
                 <div className="relative mb-6">
                   <img
                     src={sponsor.image}
@@ -71,7 +70,7 @@ export default function SponsorSection() {
               </div>
             ))}
           </div>
-          
+
           <button 
             onClick={scrollRight}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none"
@@ -82,7 +81,7 @@ export default function SponsorSection() {
             </svg>
           </button>
         </div>
-        
+
         {/* Optional: Add indicator dots to show position */}
         <div className="flex justify-center mt-6 gap-2">
           {sponsors.map((_, index) => (

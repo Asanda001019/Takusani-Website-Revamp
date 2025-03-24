@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'; // Import Outlet
 import Navbar from './Navbar';
 import SponsorSection from './SponsorSection';
 import Footer from './Footer';
+import ScrollToTop from './ScrollButton';
 
 const Layout = () => {
   return (
@@ -20,6 +21,8 @@ const Layout = () => {
 
       {/* Footer */}
       <Footer />
+
+      <ScrollToTop />
     </div>
   );
 };

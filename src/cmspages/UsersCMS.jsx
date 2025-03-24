@@ -694,7 +694,7 @@ const UsersCMS = () => {
                     <button
                       onClick={() => handleDelete(user.id, user.docId)}
                       style={{
-                        backgroundColor: '#FF4E64',
+                        backgroundColor: 'navy',
                         color: 'white',
                         border: 'none',
                         borderRadius: '5px',

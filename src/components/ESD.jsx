@@ -44,8 +44,8 @@ const ESD = () => {
       padding: '3rem 1rem',
       borderRadius: '0.75rem',
       fontFamily: 'Arial, sans-serif',
-      maxWidth: '1200px',
-      margin: '0 auto',
+     width: '100%',  // Set the width to 100% to make it take up the full page width
+      margin: '0',    // Remove the margin to avoid any unwanted spacing
       boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)'
     },
     header: {

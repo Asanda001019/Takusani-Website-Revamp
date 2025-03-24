@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Users, Shield, Activity, HelpCircle, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Import images
 import bgImage from '../assets/bg.jpg';
@@ -34,24 +35,24 @@ const HomePage = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const toggleChat = () => {
-    setShowChat(!showChat);
-  };
+  // const toggleChat = () => {
+  //   setShowChat(!showChat);
+  // };
 
-  const handleSendMessage = () => {
-    if (userMessage.trim()) {
-      setMessages([
-        ...messages,
-        { sender: 'user', text: userMessage },
-        { sender: 'bot', text: 'Thanks for your message! Please reach out to info@Takusani for now?' },
-      ]);
-      setUserMessage('');
-    }
-  };
+  // const handleSendMessage = () => {
+  //   if (userMessage.trim()) {
+  //     setMessages([
+  //       ...messages,
+  //       { sender: 'user', text: userMessage },
+  //       { sender: 'bot', text: 'Thanks for your message! Please reach out to info@Takusani for now?' },
+  //     ]);
+  //     setUserMessage('');
+  //   }
+  // };
 
-  const closeChat = () => {
-    setShowChat(false);
-  };
+  // const closeChat = () => {
+  //   setShowChat(false);
+  // };
 
   return (
     <>
@@ -77,9 +78,11 @@ const HomePage = () => {
                 We place you at the centre of international networks to
                 advance your strategic interests and unlock your full potential.
               </p>
+              <Link to="/mainabout">
               <button className="bg-indigo-600 hover:bg-indigo-800 text-white px-8 py-4 rounded-full flex items-center gap-3 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Get Started <ArrowRight size={20} />
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -95,7 +98,7 @@ const HomePage = () => {
               <div className="w-12 h-12 flex items-center justify-center mb-3">
                 <Users size={24} className="text-yellow-300" />
               </div>
-              <h2 className="text-gray-100 font-medium text-lg">Training</h2>
+              <h3 className="text-gray-100 font-medium text-lg">Training</h3>
               <h4 className="text-gray-100 text-sm">Services</h4>
             </div>
 
@@ -115,7 +118,7 @@ const HomePage = () => {
               <div className="w-12 h-12 flex items-center justify-center mb-3">
                 <Activity size={24} className="text-yellow-300" />
               </div>
-              <h3 className="text-gray-100 font-medium text-lg">Skills Development</h3>
+              <h4 className="text-gray-100 font-medium text-lg">Skills Development</h4>
               <p className="text-gray-100 text-sm">Training</p>
             </div>
 
@@ -125,7 +128,7 @@ const HomePage = () => {
               <div className="w-12 h-12 flex items-center justify-center mb-3">
                 <HelpCircle size={24} className="text-yellow-300" />
               </div>
-              <h3 className="text-gray-100 font-medium text-lg">Employee Assistance</h3>
+              <h4 className="text-gray-100 font-medium text-lg">Employee Assistance</h4>
               <p className="text-gray-100 text-sm">Support</p>
             </div>
           </div>
@@ -134,14 +137,14 @@ const HomePage = () => {
 
       {/* About Us Section */}
       <AboutUsSection />
-
-      {/* Chatbot Icon */}
-      <div
+{/* 
+      Chatbot Icon */}
+      {/* <div
         onClick={toggleChat}
         className="fixed bottom-8 right-8 bg-indigo-600 text-white rounded-full p-4 cursor-pointer shadow-lg hover:bg-indigo-800"
       >
         <HelpCircle size={32} />
-      </div>
+      </div> */}
 
       {/* Chat window */}
       {showChat && (
@@ -168,7 +171,7 @@ const HomePage = () => {
             ))}
           </div>
 
-          <div className="flex items-center mt-auto">
+          {/* <div className="flex items-center mt-auto">
             <input
               type="text"
               value={userMessage}
@@ -182,7 +185,7 @@ const HomePage = () => {
             >
               Send
             </button>
-          </div>
+          </div> */}
         </div>
       )}
     </>
