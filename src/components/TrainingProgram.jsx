@@ -14,7 +14,7 @@ const TrainingPrograms = () => {
     'End User Computing NQF 2',
     'Contact Centre NQF Level 2',
     'Contact Centre NQF Level 3',
-    'Contact Centre NQF Level 4',
+    'Contact Centre NQF Level 4'
   ];
 
   const softSkillsTrainingList = [
@@ -32,63 +32,126 @@ const TrainingPrograms = () => {
     'Assertiveness Training',
     'Stress Management',
     'Telesales/ Telemarketing',
-    'Personnel Planning',
+    'Personnel Planning'
   ];
 
+  const styles = {
+    container: {
+      backgroundColor: '#0a1e3c',
+      color: '#ffffff',
+      padding: '3rem 1rem',
+      borderRadius: '0.75rem',
+      fontFamily: 'Arial, sans-serif',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)'
+    },
+    header: {
+      textAlign: 'center',
+      marginBottom: '3rem',
+      padding: '1rem'
+    },
+    tagline: {
+      color: '#FFD700',
+      textTransform: 'uppercase',
+      fontWeight: '600',
+      letterSpacing: '1px',
+      fontSize: '1rem',
+      marginBottom: '0.75rem'
+    },
+    title: {
+      color: '#ffffff',
+      fontSize: '2.25rem',
+      fontWeight: '800',
+      lineHeight: '1.2',
+      marginBottom: '1.5rem'
+    },
+    description: {
+      color: '#d1d5db',
+      fontSize: '1.1rem',
+      lineHeight: '1.6',
+      maxWidth: '800px',
+      margin: '0 auto'
+    },
+    grid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      gap: '2rem'
+    },
+    section: {
+      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+      padding: '1.5rem',
+      borderRadius: '0.75rem',
+      border: '1px solid rgba(255, 215, 0, 0.2)',
+      transition: 'transform 0.3s ease',
+      height: '100%'
+    },
+    sectionTitle: {
+      color: '#FFD700',
+      fontSize: '1.5rem',
+      fontWeight: '700',
+      marginBottom: '1.25rem',
+      borderBottom: '2px solid #FFD700',
+      paddingBottom: '0.5rem',
+      display: 'inline-block'
+    },
+    list: {
+      listStyleType: 'none',
+      padding: '0',
+      margin: '0'
+    },
+    listItem: {
+      display: 'flex',
+      alignItems: 'flex-start',
+      marginBottom: '1rem'
+    },
+    icon: {
+      color: '#FFD700',
+      marginRight: '0.75rem',
+      minWidth: '20px'
+    },
+    serviceText: {
+      color: '#e2e8f0',
+      lineHeight: '1.5'
+    }
+  };
+
   return (
-    <div className="py-16 bg-gray-900 text-white px-4 sm:px-6 lg:px-16">
-      {/* Paragraph Header */}
-      <div className="text-center mb-16">
-        <p className="text-base font-semibold leading-6 text-indigo-500 uppercase">
+    <div style={styles.container}>
+      {/* Header Section */}
+      <div style={styles.header}>
+        <div style={styles.tagline}>
           Our Training Programmes
-        </p>
-        <h4 className="mt-2 text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9">
-          Empowering You with Knowledge and Skills
-        </h4>
-        <p className="mt-4 text-lg text-gray-400">
+        </div>
+        <h2 style={styles.title}>Empowering You with Knowledge and Skills</h2>
+        <p style={styles.description}>
           We offer a range of accredited and soft skills training programmes that are designed to meet the needs of your organization. These programmes are crafted to improve the capabilities of your workforce and ensure long-term success.
         </p>
       </div>
 
       {/* Training Programmes Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div style={styles.grid}>
         {/* Accredited Training Column */}
-        <div>
-          <h5 className="text-xl font-extrabold text-indigo-500">Accredited Training</h5>
-          <ul className="mt-4 space-y-3 font-medium">
+        <div style={styles.section}>
+          <h3 style={styles.sectionTitle}>Accredited Training</h3>
+          <ul style={styles.list}>
             {accreditedTrainingList.map((program, index) => (
-              <li key={index} className="flex items-start">
-                <div className="flex-shrink-0">
-                  <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <p className="ml-3 leading-5 text-gray-600">{program}</p>
+              <li key={index} style={styles.listItem}>
+                <span style={styles.icon}>★</span>
+                <span style={styles.serviceText}>{program}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Soft Skills Training Column */}
-        <div>
-          <h5 className="text-xl font-extrabold text-indigo-500">Soft Skills Training</h5>
-          <ul className="mt-4 space-y-3 font-medium">
+        <div style={styles.section}>
+          <h3 style={styles.sectionTitle}>Soft Skills Training</h3>
+          <ul style={styles.list}>
             {softSkillsTrainingList.map((program, index) => (
-              <li key={index} className="flex items-start">
-                <div className="flex-shrink-0">
-                  <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <p className="ml-3 leading-5 text-gray-600">{program}</p>
+              <li key={index} style={styles.listItem}>
+                <span style={styles.icon}>★</span>
+                <span style={styles.serviceText}>{program}</span>
               </li>
             ))}
           </ul>
