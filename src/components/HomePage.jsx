@@ -89,51 +89,48 @@ const HomePage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="bg-gray-100 py-6">
-        <div className="container mx-auto px-6 -mt-16 relative z-30">
-          <div className="max-w-5xl mx-auto grid grid-cols-4 gap-6">
-            {/* Training Card */}
-            <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center"
-            style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-3">
-                <Users size={24} className="text-yellow-300" />
-              </div>
-              <h3 className="text-gray-100 font-medium text-lg">Training</h3>
-              <h4 className="text-gray-100 text-sm">Services</h4>
-            </div>
-
-            {/* ESD and SED Solution Card */}
-            <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center"
-             style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-3">
-                <Shield size={24} className="text-yellow-300" />
-              </div>
-              <h3 className="text-gray-100 font-medium text-lg">ESD & SED</h3>
-              <p className="text-gray-100 text-sm">Solution</p>
-            </div>
-
-            {/* Skills Development Card */}
-            <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center"
-             style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-3">
-                <Activity size={24} className="text-yellow-300" />
-              </div>
-              <h4 className="text-gray-100 font-medium text-lg">Skills Development</h4>
-              <p className="text-gray-100 text-sm">Training</p>
-            </div>
-
-            {/* Employee Assistance Card */}
-            <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center"
-             style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-3">
-                <HelpCircle size={24} className="text-yellow-300" />
-              </div>
-              <h4 className="text-gray-100 font-medium text-lg">Employee Assistance</h4>
-              <p className="text-gray-100 text-sm">Support</p>
-            </div>
-          </div>
+<div className="bg-gray-100 py-6">
+  <div className="container mx-auto px-6 -mt-16 relative z-30">
+    <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-6">
+      {/* Training Card */}
+      <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center" style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
+        <div className="w-12 h-12 flex items-center justify-center mb-3">
+          <Users size={24} className="text-yellow-300" />
         </div>
+        <h3 className="text-gray-100 font-medium text-xs sm:text-xs md:text-sm">Training</h3>
+        <h4 className="text-gray-100 text-xs sm:text-xs md:text-sm">Services</h4>
       </div>
+
+      {/* ESD and SED Solution Card */}
+      <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center" style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
+        <div className="w-12 h-12 flex items-center justify-center mb-3">
+          <Shield size={24} className="text-yellow-300" />
+        </div>
+        <h3 className="text-gray-100 font-medium text-xs sm:text-xs md:text-sm">ESD & SED</h3>
+        <p className="text-gray-100 text-xs sm:text-xs md:text-sm">Solution</p>
+      </div>
+
+      {/* Skills Development Card */}
+      <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center" style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
+        <div className="w-12 h-12 flex items-center justify-center mb-3">
+          <Activity size={24} className="text-yellow-300" />
+        </div>
+        <h4 className="text-gray-100 font-medium text-xs sm:text-xs md:text-sm">Skills Development</h4>
+        <p className="text-gray-100 text-xs sm:text-xs md:text-sm">Training</p>
+      </div>
+
+      {/* Employee Assistance Card */}
+      <div className="p-4 rounded-lg shadow-sm text-center flex flex-col items-center" style={{ backgroundColor: 'rgb(11, 18, 75)' }}>
+        <div className="w-12 h-12 flex items-center justify-center mb-3">
+          <HelpCircle size={24} className="text-yellow-300" />
+        </div>
+        <h4 className="text-gray-100 font-medium text-xs sm:text-xs md:text-sm">Employee Assistance</h4>
+        <p className="text-gray-100 text-xs sm:text-xs md:text-sm">Support</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* About Us Section */}
       <AboutUsSection />
