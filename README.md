@@ -1,6 +1,6 @@
 <img src="https://socialify.git.ci/Asanda001019/Takusani-Website-Revamp/image?font=Bitter&language=1&name=1&owner=1&pattern=Circuit+Board&stargazers=1&theme=Dark" alt="Takusani-Website-Revamp" width="640" height="320" />
 
-<h1>Takusani Revamp</h1>h1>
+<h1>Takusani Website Revamp</h1>
 <h3>Overview</h3>
 <p>Takusani Revamp is a modern web application developed using React.js. The project aims to provide a user-friendly platform for training and skills development. It features a secure dashboard that requires user authentication to access, along with an interactive chatbot for users to ask questions and receive assistance.</p>
 
