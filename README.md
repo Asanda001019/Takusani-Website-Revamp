@@ -1,3 +1,6 @@
+<img src="https://socialify.git.ci/Asanda001019/Takusani-Website-Revamp/image?font=Bitter&language=1&name=1&owner=1&pattern=Circuit+Board&stargazers=1&theme=Dark" alt="Takusani-Website-Revamp" width="640" height="320" />
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
