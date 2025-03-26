@@ -1,13 +1,37 @@
-# React + Vite
+<img src="https://socialify.git.ci/Asanda001019/Takusani-Website-Revamp/image?font=Bitter&language=1&name=1&owner=1&pattern=Circuit+Board&stargazers=1&theme=Dark" alt="Takusani-Website-Revamp" width="640" height="320" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>Takusani Website Revamp</h1>
+<h3>Overview</h3>
+<p>Takusani Revamp is a modern web application developed using React.js. The project aims to provide a user-friendly platform for training and skills development. It features a secure dashboard that requires user authentication to access, along with an interactive chatbot for users to ask questions and receive assistance.</p>
 
-Currently, two official plugins are available:
+<h1>Features</h1>
+-Dashboard: Secure area accessible after user authentication, designed to help manage and view user-specific content.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Chatbot: An interactive chatbot that assists users by answering their questions and providing guidance on various topics related to the Takusani platform.
 
-## Expanding the ESLint configuration
+-Responsive Design: The platform is fully responsive, ensuring optimal user experience on both desktop and mobile devices.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Takusani-Website-Revamp
+<h1>Steps to Install</h1>
+<h3>Clone the Repository</h3>
+
+1.Open your terminal and run the following command:
+<h4>git clone https://github.com/Asanda001019/Takusani-Website-Revamp.git</h4>
+
+2.Install Dependencies
+<h4>Navigate to the project folder and install the required dependencies:</h4>
+```cd Takusani-Website-Revamp
+```npm install
+
+3.Start the Development Server
+<h4>Once all dependencies are installed, start the development server:</h4>
+```npm start  or ```npm run dev
+
+<h1>How to Use</h1>
+1.Sign In: To access the dashboard, you will need to sign in. The sign-in page requires a username and password.
+
+2.Chatbot: The chatbot feature is available for all users to interact with. You can ask questions and receive instant responses.
+
+<h1>Technologies used</h1>
+-Firebase
+-Tailwind
+-React.js
