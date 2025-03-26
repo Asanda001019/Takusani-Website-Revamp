@@ -10,10 +10,11 @@ import TrainingPrograms from './components/TrainingProgram';
 import SkillsDevelopment from './components/SkillsDevelopment';
 import ESD from './components/ESD';
 import EAP from './components/EAP';
-import Layout from './components/Layout'; // Layout component that includes Navbar, Footer, and Sponsors
+import Layout from './components/Layout';
 import ContactUs from './components/ContactUs';
 import ServicesCards from './components/ServicesCards';
 import JobListingPage from "./components/JobListingPage";
+import Nopage from "./Nopage";
 
 //CMS
 import CMS from "./cmspages/CMS";
@@ -38,17 +39,22 @@ function App() {
           <Route path="esd" element={<ESD />} />
           <Route path="eap" element={<EAP />} />
           <Route path="contactus" element={<ContactUs />} />
+        
           
           </Route>
    
-
+          <Route path='*' element={<Nopage/>}/>
             <Route path="/CMS" element={<CMS />}>
             <Route index element={<LoginCMS />} />
             <Route path="UsersCMS" element={<UsersCMS />} />
             <Route path="JobPostForm" element={<JobPostForm />} />
          
           </Route>
+       
+        
         </Routes>
+
+       
        
       </Router>
 
