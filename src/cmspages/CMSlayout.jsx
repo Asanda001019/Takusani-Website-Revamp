@@ -84,18 +84,7 @@ const CMS = () => {
           >
             Job Posts
           </button>
-          <button 
-            onClick={() => navigate('/CMS/TimetableCMS')}
-            style={{
-              backgroundColor: '#f0f0f0',
-              border: 'none',
-              borderRadius: '4px',
-              padding: '0.5rem 1rem',
-              cursor: 'pointer'
-            }}
-          >
-            Timetables
-          </button>
+
         </nav>
       )}
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, Navigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import Logo from '../assets/Screenshot__141_-removebg-preview.png';
+import logo from "../assets/image.jfif";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 export default function CMS() {
@@ -68,7 +68,7 @@ export default function CMS() {
 
             {/* Logo */}
             <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px", marginTop: "20px" }}>
-              <img src={Logo} alt="Logo" style={{ width: "90px", height: "90px", borderRadius: "50%" }} />
+              <img src={logo} alt="Logo" style={{ width: "90px", height: "90px", borderRadius: "50%" }} />
             </div>
 
             {/* Dashboard Title */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/Screenshot__141_-removebg-preview.png';
+import logo from "../assets/image.jfif";
 
 const LoginCMS = () => {
   const [email, setEmail] = useState('');

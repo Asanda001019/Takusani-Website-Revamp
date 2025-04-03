@@ -100,9 +100,9 @@ export default function ContactUs() {
                     </div>
                     <div className="ml-4">
                       <h3 className="mb-2 text-lg font-medium" style={{ color: accentColor }}>Contact</h3>
-                      <p className="text-gray-200">Phone: +90 312 939 70 00</p>
-                      <p className="text-gray-200">Fax: +90 312 939 75 15-16</p>
-                      <p className="text-gray-200">Mail: info@Takusani</p>
+                      <p className="text-gray-200">Phone:+27 10 634 0505</p>
+                    
+                      <p className="text-gray-200">Mail: info@takusani.co.za</p>
                     </div>
                   </li>
 

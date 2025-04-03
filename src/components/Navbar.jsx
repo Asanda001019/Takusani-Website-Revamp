@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from "../assets/image.jfif";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,17 +39,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="h-12 sm:h-16">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" className="h-full">
-                <polygon points="30,40 60,10 90,40" fill="#FFE600" />
-                <rect x="54" y="40" width="12" height="50" fill="#2A3190" />
-                <text x="65" y="85" fontFamily="Arial, sans-serif" fontSize="55" fontWeight="500" fill="#2A3190">
-                   AKUSANI.
-                </text>
-                <br></br>
-                <text x="60" y="120" fontFamily="Arial, sans-serif" fontSize="35" fill="#777777" className="hidden sm:block">
-                  Adding Value 
-                </text> 
-              </svg>
+          <img src={logo} alt='Takusani Logo' className='h-full'/>
             </div>
           </div>
 
